@@ -16,49 +16,87 @@
     font-size: 12px;
   }
 
+  .esm-icon > span,
+  .esm-icon > i,
   .esm-icon {
     /* opacity: 0.5 !important; */
     /* min-width: 55px;
     max-width: 55px; */
     display: block;
+    /* color: red; */
     /* margin: auto; */
     /* border-radius: 100%; */
     /* border: 2px solid transparent; */
   }
 
   .esm-icon-active {
-    opacity: 1 !important;
+    /* opacity: 1 !important; */
     /* min-width: 55px;
     max-width: 55px; */
     display: block;
-    margin: auto;
+    /* color: blue; */
+    /* margin: auto;
     border-radius: 100%;
-    border: 2px solid transparent;
+    border: 2px solid transparent; */
   }
   .main-footer {
     padding: 0.75rem 0.75rem 0.25rem 0.75rem !important;
   }
+
+  .footerMenu,
+  .footerMenu > span,
+  .footerMenu > i {
+    /* display: block; */
+    color: #869099;
+  }
+
+  /* Style the active class, and buttons on mouse-over */
+  .footerActive,
+  .footerActive > span,
+  .footerActive > i,
+  .footerMenu:hover {
+    /* display: block; */
+    color: #9f6060;
+    /* color: #e60000; */
+  }
 </style>
+
+<script>
+  // Add active class to the current button (highlight it)
+  var header = document.getElementById("Footer");
+  var footerMenu = header.getElementsByClassName("footerMenu");
+  for (var i = 0; i < footerMenu.length; i++) {
+    footerMenu[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("footerActive");
+      current[0].className = current[0].className.replace(" footerActive", "");
+      this.className += " footerActive";
+    });
+  }
+</script>
+
 <!-- Navbar -->
-<nav class="main-footer navbar navbar-white navbar-light block icon-bar">
-  <a class="btn.btn-app">
-    <i class="fas fa-home esm-icon fa-lg" title="Home"></i>
+<nav
+  class="main-footer navbar navbar-white navbar-light block icon-bar"
+  id="Footer"
+>
+  <a class="btn.btn-app footerMenu esm-icon footerActive">
+    <i class="fas fa-home fa-lg" title="Home"></i>
     <span>Home</span>
   </a>
-  <a class="btn.btn-app">
-    <i class="fas fa-heart esm-icon fa-lg"></i>
+  <a class="btn.btn-app footerMenu esm-icon">
+    <i class="fas fa-heart fa-lg"></i>
     <span>Favorite</span>
   </a>
-  <a class="btn.btn-app">
-    <i class="fas fa-gift esm-icon fa-lg"></i>
+  <a class="btn.btn-app footerMenu esm-icon">
+    <i class="fas fa-gift fa-lg"></i>
     <span>Shop</span>
   </a>
-  <a class="btn.btn-app">
-    <i class="fas fa-history esm-icon fa-lg"></i>
+  <a class="btn.btn-app footerMenu esm-icon">
+    <i class="fas fa-history fa-lg"></i>
     <span>History</span>
   </a>
-  <a class="btn.btn-app">
-    <i class="fas fa-user esm-icon fa-lg"></i>
+  <a class="btn.btn-app footerMenu esm-icon">
+    <i class="fas fa-user fa-lg"></i>
     <span>Account</span>
   </a>
 </nav>
