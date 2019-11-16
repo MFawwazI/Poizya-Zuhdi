@@ -12,14 +12,14 @@
     /* width: 12.5%; */
     text-align: center;
     transition: all 0.3s ease;
-    color: #869099;
+    /* color: #869099; */
     font-size: 12px;
   }
 
   .esm-icon > span,
   .esm-icon > i,
   .esm-icon {
-    /* opacity: 0.5 !important; */
+    /* opacity: 0.85; */
     /* min-width: 55px;
     max-width: 55px; */
     display: block;
@@ -46,32 +46,53 @@
   .footerMenu,
   .footerMenu > span,
   .footerMenu > i {
-    /* display: block; */
+    display: block;
     color: #869099;
+    opacity: 0.85;
   }
 
   /* Style the active class, and buttons on mouse-over */
   .footerActive,
   .footerActive > span,
   .footerActive > i,
-  .footerMenu:hover {
-    /* display: block; */
-    color: #9f6060;
+  .footerMenu:hover,
+  a.footerActive {
+    display: block;
+    /* color: #9f6060; */
+    color: #212529;
+    opacity: 1 !important;
     /* color: #e60000; */
   }
 </style>
 
-<script>
-  // Add active class to the current button (highlight it)
+<!-- <script>
+  Add active class to the current button (highlight it)
   var header = document.getElementById("Footer");
   var footerMenu = header.getElementsByClassName("footerMenu");
   for (var i = 0; i < footerMenu.length; i++) {
     footerMenu[i].addEventListener("click", function() {
+      Change Footer Color
       var current = document.getElementsByClassName("footerActive");
       current[0].className = current[0].className.replace(" footerActive", "");
       this.className += " footerActive";
     });
   }
+</!-->
+
+<script>
+  $(function() {
+    // var currentPage = window.location.pathname.split("/")[7];
+    var currentPage = window.location.pathname.split("/").pop();
+    // console.log("Split : ", window.location.pathname.split("/").pop());
+    // console.log("Path : ", currentPage);
+    $("#Footer a").each(function() {
+      var $this = $(this);
+      // console.log("This : ", $this.attr("href"), " Path : ", currentPage);
+      if ($this.attr("href").indexOf(currentPage) !== -1) {
+        $this.addClass("footerActive");
+      }
+    });
+  });
 </script>
 
 <!-- Navbar -->
@@ -79,25 +100,25 @@
   class="main-footer navbar navbar-white navbar-light block icon-bar"
   id="Footer"
 >
-  <a class="btn.btn-app footerMenu esm-icon footerActive" href="dashboard.html">
-    <i class="fas fa-home fa-lg" title="Home"></i>
+  <a class="btn.btn-app footerMenu" href="dashboard.html" id="navHome">
+    <i class="fas fa-home fa-lg"></i>
     <span>Home</span>
   </a>
-  <a class="btn.btn-app footerMenu esm-icon" href="beranda.html">
+  <a class="btn.btn-app footerMenu" href="#" id="navHome">
     <i class="fas fa-heart fa-lg"></i>
     <span>Favorite</span>
   </a>
-  <a class="btn.btn-app footerMenu esm-icon" href="beranda.html">
+  <a class="btn.btn-app footerMenu" href="#" id="navHome">
     <i class="fas fa-gift fa-lg"></i>
     <span>Shop</span>
   </a>
-  <a class="btn.btn-app footerMenu esm-icon" href="beranda.html">
+  <!-- <a class="btn.btn-app footerMenu" href="#" id="navHome">
     <i class="fas fa-history fa-lg"></i>
     <span>History</span>
-  </a>
-  <a class="btn.btn-app footerMenu esm-icon" href="beranda.html">
+  </a> -->
+  <a class="btn.btn-app footerMenu" href="profile.html" id="navProfile">
     <i class="fas fa-user fa-lg"></i>
-    <span>Account</span>
+    <span>Profile</span>
   </a>
 </nav>
 <!-- /.navbar -->

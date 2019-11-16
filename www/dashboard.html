@@ -4,31 +4,20 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Poizya Zuhdi | Dashboard</title>
-    <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="css/plugins/fontawesome-free/css/all.min.css"
     />
-    <!-- Ionicons -->
     <link
       rel="stylesheet"
       href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
     />
-    <!-- Glyphicons -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
-    /> -->
-    <!-- Theme style -->
     <link rel="stylesheet" href="css/adminlte.min.css" />
-    <!-- Google Font: Source Sans Pro -->
     <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
       rel="stylesheet"
     />
-    <!-- jQuery -->
     <script src="js/jquery-3.1.1.min.js"></script>
   </head>
   <body
@@ -37,23 +26,58 @@
   >
     <div class="wrapper">
       <div class="header"></div>
-      <div class="sidebar"></div>
+      <div
+        style="background-color: #e5e5e5; padding: 0.25em; text-align:center; margin-top: 3em;"
+      ></div>
       <div class="home"></div>
+      <div
+        style="background-color: #e5e5e5; padding: 0.25em; text-align:center; margin-bottom: 3em;"
+      ></div>
       <div class="footer"></div>
     </div>
 
     <script>
-      $(".header").load("header.html");
-    </script>
-    <script>
-      $(".sidebar").load("sidebar.html");
+      $(".header").load("nav/header.html");
     </script>
     <script>
       $(".home").load("home.html");
     </script>
+    <!-- <script>
+      $(".content-page").click(function() {
+        switch ($(this).attr("data-loadid")) {
+          case "profile":
+            $("profile").load("profile.html #content-page");
+            break;
+          default:
+            $(".home").load("home.html #content-page");
+            break;
+        }
+      });
+    </script> -->
     <script>
-      $(".footer").load("footer.html");
+      $(".footer").load("nav/footer.html");
     </script>
+
+    <!-- <script type="text/javascript">
+      $(function() {
+        $("#Footer a")
+          .filter(function() {
+            return this.href == location.href;
+          })
+          .parent()
+          .addClass("footerActive")
+          .siblings()
+          .removeClass("footerActive");
+
+        $("#Footer a").click(function() {
+          $(this)
+            .parent()
+            .addClass("footerActive")
+            .siblings()
+            .removeClass("footerActive");
+        });
+      });
+    </script> -->
 
     <!-- jQuery -->
     <script src="css/plugins/jquery/jquery.min.js"></script>
