@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Poizya | Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="../../css/plugins/fontawesome-free/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    <link rel="stylesheet" href="../../css/adminlte.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+      rel="stylesheet"
+    />
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+
+    <style>
+      .nav-tabs > li > a,
+      li > div > a,
+      li > div > i,
+      .card-header > a {
+        color: #869099;
+      }
+
+      .profile-username {
+        color: #ffffff;
+      }
+      .nav + .tab-custom-content {
+        border-bottom: 0;
+      }
+      .nav-link {
+        padding: 0;
+      }
+      .nav-tabs .nav-link {
+        border: 0;
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+      }
+    </style>
+  </head>
+  <body
+    class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav"
+    style="height: auto;"
+  >
+    <div class="wrapper">
+      <div class="header"></div>
+      <div style="padding: 4em 0 2em 0;">
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <ul
+                  class="nav nav-tabs"
+                  id="custom-content-above-tab"
+                  role="tablist"
+                >
+                  <li class="nav-item" style="flex: auto; text-align: center;">
+                    <a
+                      class="nav-link active"
+                      id="custom-content-above-all-tab"
+                      data-toggle="pill"
+                      href="#custom-content-above-all"
+                      role="tab"
+                      aria-controls="custom-content-above-all"
+                      aria-selected="true"
+                      >All</a
+                    >
+                  </li>
+                  <li class="nav-item" style="flex: auto; text-align: center;">
+                    <a
+                      class="nav-link"
+                      id="custom-content-above-topay-tab"
+                      data-toggle="pill"
+                      href="#custom-content-above-topay"
+                      role="tab"
+                      aria-controls="custom-content-above-topay"
+                      aria-selected="false"
+                      >To Pay</a
+                    >
+                  </li>
+                  <li class="nav-item" style="flex: auto; text-align: center;">
+                    <a
+                      class="nav-link"
+                      id="custom-content-above-onprogress-tab"
+                      data-toggle="pill"
+                      href="#custom-content-above-onprogress"
+                      role="tab"
+                      aria-controls="custom-content-above-onprogress"
+                      aria-selected="false"
+                      >On Progress</a
+                    >
+                  </li>
+                  <li class="nav-item" style="flex: auto; text-align: center;">
+                    <a
+                      class="nav-link"
+                      id="custom-content-above-completed-tab"
+                      data-toggle="pill"
+                      href="#custom-content-above-completed"
+                      role="tab"
+                      aria-controls="custom-content-above-completed"
+                      aria-selected="false"
+                      >Completed</a
+                    >
+                  </li>
+                  <li class="nav-item" style="flex: auto; text-align: center;">
+                    <a
+                      class="nav-link"
+                      id="custom-content-above-canceled-tab"
+                      data-toggle="pill"
+                      href="#custom-content-above-canceled"
+                      role="tab"
+                      aria-controls="custom-content-above-canceled"
+                      aria-selected="false"
+                      >Canceled</a
+                    >
+                  </li>
+                </ul>
+                <div class="tab-custom-content">
+                  <div class="tab-content" id="custom-content-above-tabContent">
+                    <!-- All Content -->
+                    <div
+                      class="tab-pane fade show active"
+                      id="custom-content-above-all"
+                      role="tabpanel"
+                      aria-labelledby="custom-content-above-all-tab"
+                    >
+                      <div class="col-md-12">
+                        All
+                      </div>
+                    </div>
+                    <!-- To Pay Content -->
+                    <div
+                      class="tab-pane fade show"
+                      id="custom-content-above-topay"
+                      role="tabpanel"
+                      aria-labelledby="custom-content-above-topay-tab"
+                    >
+                      <div class="col-md-12">
+                        To Pay
+                      </div>
+                    </div>
+                    <!-- On Progress Content -->
+                    <div
+                      class="tab-pane fade show"
+                      id="custom-content-above-onprogress"
+                      role="tabpanel"
+                      aria-labelledby="custom-content-above-onprogress-tab"
+                    >
+                      <div class="col-md-12">
+                        On Progress
+                      </div>
+                    </div>
+                    <!-- Completed Content -->
+                    <div
+                      class="tab-pane fade show"
+                      id="custom-content-above-completed"
+                      role="tabpanel"
+                      aria-labelledby="custom-content-above-completed-tab"
+                    >
+                      <div class="col-md-12">
+                        Completed
+                      </div>
+                    </div>
+                    <!-- Canceled Content -->
+                    <div
+                      class="tab-pane fade show"
+                      id="custom-content-above-canceled"
+                      role="tabpanel"
+                      aria-labelledby="custom-content-above-canceled-tab"
+                    >
+                      <div class="col-md-12">
+                        Canceled
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      $(".header").load("headerOrderList.html");
+    </script>
+
+    <!-- jQuery -->
+    <script src="../../css/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../js/template/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../js/template/demo.js"></script>
+  </body>
+</html>

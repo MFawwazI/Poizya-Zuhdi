@@ -23,7 +23,8 @@
     <style>
       .nav-tabs > li > a,
       li > div > a,
-      li > div > i {
+      li > div > i,
+      .card-header > a {
         color: #869099;
       }
 
@@ -32,6 +33,11 @@
       }
       .nav + .tab-custom-content {
         border-bottom: 0;
+      }
+      .nav-tabs .nav-link {
+        border: 0;
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
       }
     </style>
   </head>
@@ -131,16 +137,23 @@
                         <div class="card-header" style="padding: 0 !important">
                           <h3
                             class="card-title"
-                            style="padding: 0.25em !important; font-weight: bold"
+                            style="padding: 0.25em !important; font-weight: bold; flex: 1;"
                           >
                             Order List
                           </h3>
+                          <a href="profile/orderList/orderList.html"
+                            ><span style="flex: 2; float: right;"
+                              >View All</span
+                            ></a
+                          >
                         </div>
                       </div>
                       <ul class="products-list product-list-in-card pl-2 pr-2">
                         <li class="item">
-                          <div onclick="location.href='dashboard.html';">
-                            <a href="#" class="product-title"
+                          <div
+                            onclick="location.href='profile/orderList/orderList.html#custom-content-above-topay-tab';"
+                          >
+                            <a href="javascript:void(0)" class="product-title"
                               ><span style="flex: 2">To Pay</span>
                               <i
                                 class="fa fa-chevron-right"
@@ -150,7 +163,9 @@
                           </div>
                         </li>
                         <li class="item">
-                          <div>
+                          <div
+                            onclick="location.href='profile/orderList/orderList.html';"
+                          >
                             <a href="javascript:void(0)" class="product-title"
                               >On Progress
                               <i
@@ -161,7 +176,9 @@
                           </div>
                         </li>
                         <li class="item">
-                          <div>
+                          <div
+                            onclick="location.href='profile/orderList/orderList.html';"
+                          >
                             <a href="javascript:void(0)" class="product-title">
                               Completed
                               <i
@@ -172,9 +189,11 @@
                           </div>
                         </li>
                         <li class="item">
-                          <div>
+                          <div
+                            onclick="location.href='profile/orderList/orderList.html';"
+                          >
                             <a href="javascript:void(0)" class="product-title"
-                              >Cancelled
+                              >Canceled
                               <i
                                 class="fa fa-chevron-right"
                                 style="float: right"
