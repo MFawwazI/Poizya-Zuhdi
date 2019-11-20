@@ -1,160 +1,144 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Poizya Zuhdi | Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="css/plugins/fontawesome-free/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-    />
-    <link rel="stylesheet" href="css/adminlte.min.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-      rel="stylesheet"
-    />
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <style>
-      body {
-        height: auto;
-        /* background-image: url(img/boxed-bg.jpg); */
-        /* background-repeat: no-repeat;
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Poizya Zuhdi | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/plugins/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+  <link rel="stylesheet" href="css/adminlte.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+  <script src="http://dennyfebrygo.com/poizya/www/js/jquery-3.1.1.min.js"></script>
+  <script src="http://dennyfebrygo.com/poizya/www/js/jquery.validate.min.js"></script>
+  <script src="http://dennyfebrygo.com/poizya/www/js/login.js"></script>
+  <style>
+    body {
+      height: auto;
+      /* background-image: url(img/boxed-bg.jpg); */
+      /* background-repeat: no-repeat;
         background-size: cover; */
-      }
+    }
 
-      .imglogo {
-        max-width: 100%;
-        width: 300px;
-        height: auto;
-      }
+    .imglogo {
+      max-width: 100%;
+      width: 300px;
+      height: auto;
+    }
 
-      .login-page {
-        height: 90vh;
-      }
+    .login-page {
+      height: 90vh;
+    }
 
-      .form-control {
-        background-color: transparent;
-        border: 0;
-        border-bottom: 2px solid black;
-      }
-      .input-group-text {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 0.5em;
-        background-color: transparent;
-        border: 0;
-        color: inherit;
-      }
+    .form-control {
+      background-color: transparent;
+      border: 0;
+      border-bottom: 2px solid black;
+    }
 
-      .btn {
-        margin: 0.5em 0;
-        text-align: center;
-      }
+    .input-group-text {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.5em;
+      background-color: transparent;
+      border: 0;
+      color: inherit;
+    }
 
-      .separator {
-        display: flex;
-        align-items: center;
-        text-align: center;
-      }
-      .separator::before,
-      .separator::after {
-        content: "";
-        flex: 1;
-        border-bottom: 1px solid #000;
-      }
-      .separator::before {
-        margin-right: 0.25em;
-      }
-      .separator::after {
-        margin-left: 0.25em;
-      }
-    </style>
-  </head>
+    .btn {
+      margin: 0.5em 0;
+      text-align: center;
+    }
 
-  <body class="login-page hold-transition">
-    <div class="login-box">
-      <div class="login-logo">
-        <img src="img/logo-horizontal.png" class="imglogo" />
-      </div>
-      <div>
-        <div>
-          <h5 class="col-12" style="float: left;">Sign in</h5>
+    .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
 
-          <form action="" method="post">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Username or Email"
-              />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-user"></span>
-                </div>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input
-                type="password"
-                class="form-control"
-                placeholder="Password"
-              />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-key"></span>
-                </div>
-              </div>
-            </div>
-            <p class="mb-1" style="float: right;">
-              <a href="#">I forgot my password</a>
-            </p>
-            <!-- <div class="row"> -->
-            <div class="col-12">
-              <div class="icheck-primary">
-                <input type="checkbox" id="remember" />
-                <label for="remember">
-                  Remember Me
-                </label>
-              </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-12">
-              <button
-                type="button"
-                class="btn btn-primary btn-block"
-                onclick="location.href='dashboard.html';"
-              >
-                Sign In
-              </button>
-            </div>
-            <!-- Separator -->
-            <div class="separator">Or</div>
-            <!-- /.col -->
-            <div class="col-12">
-              <button
-                type="button"
-                class="btn btn-warning btn-block"
-                onclick="location.href='register.html';"
-              >
-                Sign Up
-              </button>
-            </div>
-            <!-- </div> -->
-          </form>
-        </div>
-        <!-- /.login-card-body -->
-      </div>
+    .separator::before,
+    .separator::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #000;
+    }
+
+    .separator::before {
+      margin-right: 0.25em;
+    }
+
+    .separator::after {
+      margin-left: 0.25em;
+    }
+  </style>
+</head>
+
+<body class="login-page hold-transition">
+  <div class="login-box">
+    <div class="login-logo">
+      <img src="img/logo-horizontal.png" class="imglogo" />
     </div>
+    <div>
+      <div>
+        <h5 class="col-12" style="float: left;">Sign in</h5>
 
-    <script src="css/plugins/jquery/jquery.min.js"></script>
-    <script src="css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/template/adminlte.min.js"></script>
-    <script src="js/template/demo.js"></script>
-  </body>
+        <form id="login-form" method="post">
+          <div class="input-group mb-3">
+            <input type="text" name="id" id="id" class="form-control" placeholder="Username or Email" />
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-key"></span>
+              </div>
+            </div>
+          </div>
+          <p class="mb-1" style="float: right;">
+            <a href="#">I forgot my password</a>
+          </p>
+          <!-- <div class="row"> -->
+          <div class="col-12">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember" />
+              <label for="remember">
+                Remember Me
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-12">
+            <button type="button" id="btn-signin" name="submit" class="btn btn-primary btn-block">
+              Sign In
+            </button>
+          </div>
+          <!-- Separator -->
+          <div class="separator">Or</div>
+          <!-- /.col -->
+          <div class="col-12">
+            <button type="button" class="btn btn-warning btn-block" onclick="location.href='register.html';">
+              Sign Up
+            </button>
+          </div>
+          <!-- </div> -->
+        </form>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+
+  <script src="css/plugins/jquery/jquery.min.js"></script>
+  <script src="css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/template/adminlte.min.js"></script>
+  <script src="js/template/demo.js"></script>
+</body>
+
 </html>
