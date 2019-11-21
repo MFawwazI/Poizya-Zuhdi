@@ -1,320 +1,277 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Poizya | My Profile</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="../../css/plugins/fontawesome-free/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-    />
-    <link rel="stylesheet" href="../../css/adminlte.min.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-      rel="stylesheet"
-    />
-    <script src="../../js/jquery-3.1.1.min.js"></script>
 
-    <style>
-      .nav-tabs > li > a,
-      li > div > a,
-      li > div > i,
-      li > div > span {
-        color: #262626;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Poizya | My Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../../css/plugins/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+  <link rel="stylesheet" href="../../css/adminlte.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+  <script src="../../js/jquery-3.1.1.min.js"></script>
 
-      .profile-username {
-        color: #ffffff;
-      }
+  <style>
+    .nav-tabs>li>a,
+    li>div>a,
+    li>div>i,
+    li>div>span {
+      color: #262626;
+    }
 
-      .modal-dialog {
-        margin: 2rem;
-      }
+    .profile-username {
+      color: #ffffff;
+    }
 
-      .products-list > .item {
-        padding: 0.5em 0 0 0;
-      }
+    .modal-dialog {
+      margin: 2rem;
+    }
 
-      .form-control:disabled,
-      .disabled {
-        background-color: inherit;
-        opacity: 60%;
-      }
+    .products-list>.item {
+      padding: 0.5em 0 0 0;
+    }
 
-      .input-group-text {
-        padding: 0 !important;
-        margin-bottom: 0;
-        background-color: white;
-        border: none !important;
-      }
-      .input-group input {
-        border: none;
-        text-align: right;
-        font-size: 0.875rem;
-      }
-      .input-group span {
-        font-weight: 520;
-      }
+    .form-control:disabled,
+    .disabled {
+      background-color: inherit;
+      opacity: 60%;
+    }
 
-      div.picture-menu > div:not(:last-child) {
-          text-align: center; border-bottom: 1px solid black; padding: 0.5em;
-      }
-      div.picture-menu > div:last-child {
-          text-align: center; padding: 0.5em;
-      }
-      .custom-file > label {
-          position: absolute; width: 100%; text-align: center; font-weight: 500 !important; margin-bottom: 0;
-      }
-      .custom-file > input {
-          width: 100%;
-      }
-      .custom-file, .custom-file-input {
-          height: auto;
-      }
-    </style>
-  </head>
-  <body
-    class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav"
-    style="height: auto;"
-  >
-    <div class="wrapper">
-      <div class="header" style="flex: 1;"></div>
-      <div style="flex: auto;">
-        <section class="content" style="margin-top: 4em;">
-          <!-- Photo Profile -->
-          <div class="col-md-12">
-            <div
-              style="background-image:url(../../img/boxed-bg.jpg); background-repeat: no-repeat; background-size: cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; padding: 1em;"
+    .input-group-text {
+      padding: 0 !important;
+      margin-bottom: 0;
+      background-color: white;
+      border: none !important;
+    }
 
-              data-toggle="modal" data-target="#photo-modal"
-            >
-              <div class="text-center" >
-                <img
-                  class="profile-user-img img-fluid img-circle"
-                  src="../../img/user1-128x128.jpg"
-                  alt="User profile picture"
-                />
+    .input-group input {
+      border: none;
+      text-align: right;
+      font-size: 0.875rem;
+    }
+
+    .input-group span {
+      font-weight: 520;
+    }
+
+    div.picture-menu>div:not(:last-child) {
+      text-align: center;
+      border-bottom: 1px solid black;
+      padding: 0.5em;
+    }
+
+    div.picture-menu>div:last-child {
+      text-align: center;
+      padding: 0.5em;
+    }
+
+    .custom-file>label {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-weight: 500 !important;
+      margin-bottom: 0;
+    }
+
+    .custom-file>input {
+      width: 100%;
+    }
+
+    .custom-file,
+    .custom-file-input {
+      height: auto;
+    }
+  </style>
+</head>
+
+<body class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav" style="height: auto;">
+  <div class="wrapper">
+    <div class="header" style="flex: 1;"></div>
+    <div style="flex: auto;">
+      <section class="content" style="margin-top: 4em;">
+        <!-- Photo Profile -->
+        <div class="col-md-12">
+          <div
+            style="background-image:url(../../img/boxed-bg.jpg); background-repeat: no-repeat; background-size: cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; padding: 1em;"
+            data-toggle="modal" data-target="#photo-modal">
+            <div class="text-center">
+              <img class="profile-user-img img-fluid img-circle" src="../../img/user1-128x128.jpg"
+                alt="User profile picture" />
+            </div>
+            <h3 class="profile-username text-center">Alfan Zuhdi</h3>
+
+            <p class="text-muted text-center" style="color: #666666 !important;">
+              Software Engineer
+            </p>
+          </div>
+        </div>
+
+        <!-- Profile Data -->
+        <div class="col-md-12">
+          <ul class="products-list product-list-in-card pl-2 pr-2">
+            <!-- item -->
+            <li class="item">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    Name
+                  </span>
+                </div>
+                <input onClick="this.select();" type="text" class="form-control" name="name" value="Alfan Zuhdi" />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="fas fa-chevron-right fa-sm"></i>
+                  </div>
+                </div>
               </div>
-              <h3 class="profile-username text-center">Alfan Zuhdi</h3>
+            </li>
+            <!-- /.item -->
+            <li class="item">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    Username
+                  </span>
+                </div>
+                <input onClick="this.select();" type="text" class="form-control" name="username" value="Zuhdi123"
+                  disabled />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="fas fa-chevron-right fa-sm disabled"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- /.item -->
+            <li class="item">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    Bio
+                  </span>
+                </div>
+                <input onClick="this.select();" type="text" class="form-control" name="bio" value="Software Engineer" />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="fas fa-chevron-right fa-sm"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- /.item -->
+            <li class="item">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    Gender
+                  </span>
+                </div>
+                <input onClick="this.select();" type="text" class="form-control" name="gender" value="Male" />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="fas fa-chevron-right fa-sm"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- /.item -->
+            <li class="item">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    Birthday
+                  </span>
+                </div>
+                <input onClick="this.select();" type="text" class="form-control" name="birtday" value="13-11-1997" />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="fas fa-chevron-right fa-sm"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- /.item -->
+            <li class="item">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    Phone
+                  </span>
+                </div>
+                <input onClick="this.select();" type="text" class="form-control" name="phone" value="0813-9550-xxxx" />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="fas fa-chevron-right fa-sm"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- /.item -->
+            <li class="item">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    Email
+                  </span>
+                </div>
+                <input onClick="this.select();" type="email" class="form-control" name="email"
+                  value="Alfan.Z@gmail.com" />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="fas fa-chevron-right fa-sm"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-              <p
-                class="text-muted text-center"
-                style="color: #666666 !important;"
-              >
-                Software Engineer
-              </p>
+        <!-- Photo Modal -->
+        <div class="modal fade" id="photo-modal">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-body picture-menu">
+                <!-- Change Profile Picture -->
+                <div class="input-group">
+                  <div class="custom-file">
+                    <label for="profile-picture">Change Profile Picture</label>
+                    <input type="file" class="custom-file-input" id="profile-picture" />
+                  </div>
+                </div>
+                <div><span>Remove Profile Picture</span></div>
+                <!-- Change Background Picture -->
+                <div class="input-group">
+                  <div class="custom-file">
+                    <label for="background-picture">Change Background Picture</label>
+                    <input type="file" class="custom-file-input" id="background-picture" />
+                  </div>
+                </div>
+                <div><span>Remove Profile Picture</span></div>
+              </div>
             </div>
           </div>
-
-          <!-- Profile Data -->
-          <div class="col-md-12">
-            <ul class="products-list product-list-in-card pl-2 pr-2">
-              <!-- item -->
-              <li class="item">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      Name
-                    </span>
-                  </div>
-                  <input
-                    onClick="this.select();"
-                    type="text"
-                    class="form-control"
-                    name="name"
-                    value="Alfan Zuhdi"
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <i class="fas fa-chevron-right fa-sm"></i>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <!-- /.item -->
-              <li class="item">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      Username
-                    </span>
-                  </div>
-                  <input
-                    onClick="this.select();"
-                    type="text"
-                    class="form-control"
-                    name="username"
-                    value="Zuhdi123"
-                    disabled
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <i class="fas fa-chevron-right fa-sm disabled"></i>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <!-- /.item -->
-              <li class="item">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      Bio
-                    </span>
-                  </div>
-                  <input
-                    onClick="this.select();"
-                    type="text"
-                    class="form-control"
-                    name="bio"
-                    value="Software Engineer"
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <i class="fas fa-chevron-right fa-sm"></i>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <!-- /.item -->
-              <li class="item">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      Gender
-                    </span>
-                  </div>
-                  <input
-                    onClick="this.select();"
-                    type="text"
-                    class="form-control"
-                    name="gender"
-                    value="Male"
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <i class="fas fa-chevron-right fa-sm"></i>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <!-- /.item -->
-              <li class="item">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      Birthday
-                    </span>
-                  </div>
-                  <input
-                    onClick="this.select();"
-                    type="text"
-                    class="form-control"
-                    name="birtday"
-                    value="13-11-1997"
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <i class="fas fa-chevron-right fa-sm"></i>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <!-- /.item -->
-              <li class="item">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      Phone
-                    </span>
-                  </div>
-                  <input
-                    onClick="this.select();"
-                    type="text"
-                    class="form-control"
-                    name="phone"
-                    value="0813-9550-xxxx"
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <i class="fas fa-chevron-right fa-sm"></i>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <!-- /.item -->
-              <li class="item">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      Email
-                    </span>
-                  </div>
-                  <input
-                    onClick="this.select();"
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    value="Alfan.Z@gmail.com"
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <i class="fas fa-chevron-right fa-sm"></i>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Photo Modal -->
-                <div class="modal fade" id="photo-modal">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-body picture-menu">
-                            <!-- Change Profile Picture -->
-                         <div class="input-group">
-                              <div class="custom-file">
-                                  <label for="profile-picture">Change Profile Picture</label>
-                              <input type="file" class="custom-file-input" id="profile-picture"/>
-                              </div>
-                         </div>
-                          <div><span>Remove Profile Picture</span></div>
-                          <!-- Change Background Picture -->
-                          <div class="input-group">
-                              <div class="custom-file">
-                                  <label for="background-picture">Change Background Picture</label>
-                              <input type="file" class="custom-file-input" id="background-picture"/>
-                              </div>
-                         </div>
-                          <div><span>Remove Profile Picture</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- End Photo Modal -->
-        </section>
-      </div>
+        </div>
     </div>
-    <!-- ./wrapper -->
+    <!-- End Photo Modal -->
+    </section>
+  </div>
+  </div>
+  <!-- ./wrapper -->
 
-    <script>
-      $(".header").load("headerMyProfile.html");
-    </script>
+  <script>
+    $(".header").load("headerMyProfile.html");
+  </script>
 
-    <!-- jQuery -->
-    <script src="../../css/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../../js/template/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../../js/template/demo.js"></script>
-  </body>
+  <!-- jQuery -->
+  <script src="../../css/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../../css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../../js/template/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../../js/template/demo.js"></script>
+</body>
+
 </html>

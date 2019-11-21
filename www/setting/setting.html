@@ -1,175 +1,142 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Poizya | Setting</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="../css/plugins/fontawesome-free/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-    />
-    <link rel="stylesheet" href="../css/adminlte.min.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-      rel="stylesheet"
-    />
-    <script src="../js/jquery-3.1.1.min.js"></script>
 
-    <style>
-      .nav-tabs > li > a,
-      li > div > a,
-      li > div > i,
-      li > div > span {
-        color: #869099;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Poizya | Setting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/plugins/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+  <link rel="stylesheet" href="../css/adminlte.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+  <script src="../js/jquery-3.1.1.min.js"></script>
 
-      .profile-username {
-        color: #ffffff;
-      }
+  <style>
+    .nav-tabs>li>a,
+    li>div>a,
+    li>div>i,
+    li>div>span {
+      color: #869099;
+    }
 
-      .modal-dialog {
-        margin: 2rem;
-      }
-    </style>
-    <script>
-      $(document).ready(function () {
-    $('#logout').click(function () {
-        alert("You have successfully logged out")
+    .profile-username {
+      color: #ffffff;
+    }
+
+    .modal-dialog {
+      margin: 2rem;
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      $('#logout').click(function () {
         localStorage.clear();
         sessionStorage.clear();
         document.location.href = '../login.html';
 
+      });
     });
-  });
-    </script>
-  </head>
-  <body
-    class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav"
-    style="height: auto;"
-  >
-    <div class="wrapper">
-      <div class="header"></div>
-      <div
-        style="background-color: #e5e5e5; padding: 1.9em;text-align:center;"
-      ></div>
-      <div>
-        <div class="col-md-12">
-          <ul class="products-list product-list-in-card pl-2 pr-2">
-            <li class="item">
-              <div onclick="location.href='myProfile/myProfile.html';">
-                <a href="#" class="product-title"
-                  ><span style="flex: 2">My Profile</span>
-                  <i
-                    class="fa fa-chevron-right"
-                    style="float: right; flex: 1"
-                  ></i
-                ></a>
-              </div>
-            </li>
-            <!-- /.item -->
-            <li class="item">
-              <div onclick="location.href='password/password.html';">
-                <a href="javascript:void(0)" class="product-title"
-                  >Change Password
-                  <i class="fa fa-chevron-right" style="float: right"></i
-                ></a>
-              </div>
-            </li>
-            <!-- /.item -->
-            <li class="item">
-              <div>
-                <a href="javascript:void(0)" class="product-title">
-                  Notification
-                  <i class="fa fa-chevron-right" style="float: right"></i>
-                </a>
-              </div>
-            </li>
-            <!-- /.item -->
-            <li class="item">
-              <div>
-                <a href="javascript:void(0)" class="product-title"
-                  >About <i class="fa fa-chevron-right" style="float: right"></i
-                ></a>
-              </div>
-            </li>
-            <!-- /.item -->
-            <li class="item">
-              <div>
-                <a href="javascript:void(0)" class="product-title">
-                  Help<i class="fa fa-chevron-right" style="float: right"></i>
-                </a>
-              </div>
-            </li>
-            <!-- /.item -->
-            <li class="item">
-              <div data-toggle="modal" data-target="#logout-modal">
-                <!-- <a href="#" class="card-title"> -->
-                <i class="fa fa-sign-out-alt mr-1 fa-sm"></i>
-                <span>Logout</span>
-                <!-- </a> -->
-                <!-- Logout Modal -->
-                <div class="modal fade" id="logout-modal">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                          <h4 class="modal-title">Logout From Poizya</h4>
-                          <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                          >
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <p>Are you sure want to logout ?</p>
-                        </div>
-                        <div class="modal-footer justify-content-between">
-                          <button
-                            type="button"
-                            class="btn btn-default"
-                            data-dismiss="modal"
-                            style="float: right;"
-                          >
-                            Cancel
-                          </button>
-                          <input id="logout"
-                            type="button" type="submit"
-                            class="btn btn-primary"
-                            style="float: right;"
-                            onclick="logout();" value="Logout"
-                          >
-                        </div>
-                      </div>
+  </script>
+</head>
+
+<body class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav" style="height: auto;">
+  <div class="wrapper">
+    <div class="header"></div>
+    <div style="background-color: #e5e5e5; padding: 1.9em;text-align:center;"></div>
+    <div>
+      <div class="col-md-12">
+        <ul class="products-list product-list-in-card pl-2 pr-2">
+          <li class="item">
+            <div onclick="location.href='myProfile/myProfile.html';">
+              <a href="#" class="product-title"><span style="flex: 2">My Profile</span>
+                <i class="fa fa-chevron-right" style="float: right; flex: 1"></i></a>
+            </div>
+          </li>
+          <!-- /.item -->
+          <li class="item">
+            <div onclick="location.href='password/password.html';">
+              <a href="javascript:void(0)" class="product-title">Change Password
+                <i class="fa fa-chevron-right" style="float: right"></i></a>
+            </div>
+          </li>
+          <!-- /.item -->
+          <li class="item">
+            <div>
+              <a href="javascript:void(0)" class="product-title">
+                Notification
+                <i class="fa fa-chevron-right" style="float: right"></i>
+              </a>
+            </div>
+          </li>
+          <!-- /.item -->
+          <li class="item">
+            <div>
+              <a href="javascript:void(0)" class="product-title">About <i class="fa fa-chevron-right"
+                  style="float: right"></i></a>
+            </div>
+          </li>
+          <!-- /.item -->
+          <li class="item">
+            <div>
+              <a href="javascript:void(0)" class="product-title">
+                Help<i class="fa fa-chevron-right" style="float: right"></i>
+              </a>
+            </div>
+          </li>
+          <!-- /.item -->
+          <li class="item">
+            <div data-toggle="modal" data-target="#logout-modal">
+              <!-- <a href="#" class="card-title"> -->
+              <i class="fa fa-sign-out-alt mr-1 fa-sm"></i>
+              <span>Logout</span>
+              <!-- </a> -->
+              <!-- Logout Modal -->
+              <div class="modal fade" id="logout-modal">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Logout From Poizya</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Are you sure want to logout ?</p>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">
+                        Cancel
+                      </button>
+                      <input id="logout" type="button" type="submit" class="btn btn-primary" style="float: right;"
+                        onclick="logout();" value="Logout">
                     </div>
                   </div>
                 </div>
-                <!-- End Logout Modal -->
               </div>
-            </li>
-          </ul>
-        </div>
+            </div>
+            <!-- End Logout Modal -->
       </div>
+      </li>
+      </ul>
     </div>
-    <!-- ./wrapper -->
+  </div>
+  </div>
+  <!-- ./wrapper -->
 
-    <script>
-      $(".header").load("headerSetting.html");
-    </script>
+  <script>
+    $(".header").load("headerSetting.html");
+  </script>
 
-    <!-- jQuery -->
-    <script src="../css/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../js/template/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../js/template/demo.js"></script>
-  </body>
+  <!-- jQuery -->
+  <script src="../css/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../js/template/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../js/template/demo.js"></script>
+</body>
+
 </html>

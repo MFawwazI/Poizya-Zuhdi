@@ -1,56 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Poizya Zuhdi | Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="css/plugins/fontawesome-free/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-    />
-    <link rel="stylesheet" href="css/adminlte.min.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-      rel="stylesheet"
-    />
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script>
-        $(document).ready(function () { 
-            if (sessionStorage.getItem("username") === null) { 
-                alert("You must login first!");
-                window.location = "login.html"; 
-            }
-        });
-    </script>
-  </head>
-  <body
-    class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav"
-    style="height: auto;"
-  >
-    <div class="wrapper">
-      <div class="header"></div>
-      <div
-        style="background-color: #e5e5e5; padding: 0.25em; text-align:center; margin-top: 3em;"
-      ></div>
-      <div class="home"></div>
-      <div
-        style="background-color: #e5e5e5; padding: 0.25em; text-align:center; margin-bottom: 3em;"
-      ></div>
-      <div class="footer"></div>
-    </div>
 
-    <script>
-      $(".header").load("nav/header.html");
-    </script>
-    <script>
-      $(".home").load("home.html");
-    </script>
-    <!-- <script>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Poizya Zuhdi | Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/plugins/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+  <link rel="stylesheet" href="css/adminlte.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      if (sessionStorage.getItem("username") === null) {
+        alert("You must login first!");
+        window.location = "login.html";
+      }
+    });
+  </script>
+</head>
+
+<body class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav" style="height: auto;">
+  <div class="wrapper">
+    <div class="header"></div>
+    <div style="background-color: #e5e5e5; padding: 0.25em; text-align:center; margin-top: 3em;"></div>
+    <div class="home"></div>
+    <div style="background-color: #e5e5e5; padding: 0.25em; text-align:center; margin-bottom: 3em;"></div>
+    <div class="footer"></div>
+  </div>
+
+  <script>
+    $(".header").load("nav/header.html");
+  </script>
+  <script>
+    $(".home").load("home.html");
+  </script>
+  <!-- <script>
       $(".content-page").click(function() {
         switch ($(this).attr("data-loadid")) {
           case "profile":
@@ -62,11 +49,11 @@
         }
       });
     </script> -->
-    <script>
-      $(".footer").load("nav/footer.html");
-    </script>
+  <script>
+    $(".footer").load("nav/footer.html");
+  </script>
 
-    <!-- <script type="text/javascript">
+  <!-- <script type="text/javascript">
       $(function() {
         $("#Footer a")
           .filter(function() {
@@ -87,13 +74,14 @@
       });
     </script> -->
 
-    <!-- jQuery -->
-    <script src="css/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="js/template/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="js/template/demo.js"></script>
-  </body>
+  <!-- jQuery -->
+  <script src="css/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="js/template/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="js/template/demo.js"></script>
+</body>
+
 </html>
