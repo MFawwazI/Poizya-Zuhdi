@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
   <link rel="stylesheet" href="css/adminlte.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
-  <script src="http://dennyfebrygo.com/poizya/www/js/jquery-3.1.1.min.js"></script>
-  <script src="http://dennyfebrygo.com/poizya/www/js/jquery.validate.min.js"></script>
-  <script src="http://dennyfebrygo.com/poizya/www/js/login.js"></script>
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/login.js"></script>
   <style>
     body {
       height: auto;
@@ -86,21 +86,28 @@
         <h5 class="col-12" style="float: left;">Sign in</h5>
 
         <form id="login-form" method="post">
-          <div class="input-group mb-3">
-            <input type="text" name="id" id="id" class="form-control" placeholder="Username or Email" />
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-user"></span>
+            <div id="errorDiv"></div>
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <input type="text" name="id" id="id" class="form-control" placeholder="Username or Email" />
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
               </div>
             </div>
+            <span class="help-block" id="error"></span>
           </div>
-          <div class="input-group mb-3">
-            <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-key"></span>
+          <div class="form-group ">
+            <div class="input-group mb-3">
+              <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-key"></span>
+                </div>
               </div>
             </div>
+            <span class="help-block" id="error"></span>
           </div>
           <p class="mb-1" style="float: right;">
             <a href="#">I forgot my password</a>
@@ -116,9 +123,7 @@
           </div>
           <!-- /.col -->
           <div class="col-12">
-            <button type="button" id="btn-signin" name="submit" class="btn btn-primary btn-block">
-              Sign In
-            </button>
+            <input type="submit" id="btn-signin" name="submit" class="btn btn-primary btn-block" value="Sign In">
           </div>
           <!-- Separator -->
           <div class="separator">Or</div>

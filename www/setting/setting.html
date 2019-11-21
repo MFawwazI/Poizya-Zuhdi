@@ -36,6 +36,17 @@
         margin: 2rem;
       }
     </style>
+    <script>
+      $(document).ready(function () {
+    $('#logout').click(function () {
+        alert("You have successfully logged out")
+        localStorage.clear();
+        sessionStorage.clear();
+        document.location.href = '../login.html';
+
+    });
+  });
+    </script>
   </head>
   <body
     class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav"
@@ -128,14 +139,12 @@
                           >
                             Cancel
                           </button>
-                          <button
-                            type="button"
+                          <input id="logout"
+                            type="button" type="submit"
                             class="btn btn-primary"
                             style="float: right;"
-                            onclick="location.href='../login.html';"
+                            onclick="logout();" value="Logout"
                           >
-                            Logout
-                          </button>
                         </div>
                       </div>
                     </div>

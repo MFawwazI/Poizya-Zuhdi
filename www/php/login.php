@@ -8,7 +8,11 @@ $response = array();
 
 if ($_POST) {
     $id = $_POST['id'];
-    $password = md5($_POST['password']);
+    $password = base64_encode($_POST['password']);
+    $time = date("Y-m-d h:i:s");
+
+    $query = "UPDATE account SET last_login='$time' WHERE (username='$id' OR  email='$id') AND password='$password'";
+    $insert = mysqli_query($db, $query);
 
     $sql = "SELECT * FROM account WHERE (username='$id' OR  email='$id') AND password='$password'";
     $result = mysqli_query($db, $sql);
@@ -22,7 +26,7 @@ if ($_POST) {
         echo json_encode($response);
     } else {
         $obj = (object) [
-            'error' => '<span class="glyphicon glyphicon-info-sign"></span> &nbsp; Username or Email and password you entered is incorrect :('
+            'error' => '<span class="fa fa-info-circle"></span> &nbsp; Username or Email and password you entered is incorrect :('
         ];
         http_response_code(400);
         echo json_encode($obj);
