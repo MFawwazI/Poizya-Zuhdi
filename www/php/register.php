@@ -11,8 +11,9 @@ if ($_POST) {
     $Email = $_POST['email'];
     $Phone_number = $_POST['phone_number'];
     $Password = base64_encode($_POST['password']);
+    $time = date("Y-m-d h:i:s");
 
-    $query = "INSERT INTO account(username,email,password,phone_number,level,status) VALUES('$Username', '$Email', '$Password', '$Phone_number', '0', '0')";
+    $query = "INSERT INTO account(username,email,password,phone_number,level,status,created) VALUES('$Username', '$Email', '$Password', '$Phone_number', '0', '0', '$time')";
     $result = mysqli_query($db, $query);
 
     if ($result) {

@@ -61,7 +61,7 @@ function submitForm() {
             $.each(result, function (i, field) {
                 if (field.status === '0') {
                     $('#errorDiv').slideDown('fast', function () {
-                        $('#errorDiv').append('<div class="alert alert-info"><span class="fa fa-info-circle"></span> &nbsp; Akun anda belum di verifikasi, Silakan cek email anda </div>');
+                        $('#errorDiv').append('<div class="alert alert-info"><span class="fa fa-info-circle"></span> &nbsp; Your account has not been verified. Please check your email </div>');
                         $("#login-form").trigger('reset');
                     }).delay(2000).slideUp('fast');
                     setTimeout(function () {

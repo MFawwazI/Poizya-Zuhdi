@@ -29,7 +29,7 @@ if ($_POST) {
         $mail->SetFrom("no-reply@poizya.dennyfebrygo.com", "Admin Poizya"); //set email pengirim
         $mail->Subject = "Verifikasi Email"; //subyek email
         $mail->AddAddress($Email, $Username); //tujuan email
-        $mail->MsgHTML("Hallo $Username ,<br/><br/>Thank you for registering a Poizya account<br/>Please click <a href=''>here</a> to verify your account");
+        $mail->MsgHTML("Hallo $Username ,<br/><br/>Thank you for registering a Poizya account<br/>Please click <a href='https://adminpoizya.dennyfebrygo.com/public/account/verification/$id'>here</a> to verify your account");
         if ($mail->Send()) $data['email'] = "Message has been sent";
         else $data['email'] = "Failed to sending message";
 

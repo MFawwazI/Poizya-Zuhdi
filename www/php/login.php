@@ -11,9 +11,6 @@ if ($_POST) {
     $password = base64_encode($_POST['password']);
     $time = date("Y-m-d h:i:s");
 
-    $query = "UPDATE account SET last_login='$time' WHERE (username='$id' OR  email='$id') AND password='$password'";
-    $insert = mysqli_query($db, $query);
-
     $sql = "SELECT * FROM account WHERE (username='$id' OR  email='$id') AND password='$password'";
     $result = mysqli_query($db, $sql);
     $num_row = mysqli_num_rows($result);
@@ -23,6 +20,8 @@ if ($_POST) {
 
 
     if ($num_row > 0) {
+        $query = "UPDATE account SET last_login='$time' WHERE (username='$id' OR  email='$id') AND password='$password'";
+        $insert = mysqli_query($db, $query);
         echo json_encode($response);
     } else {
         $obj = (object) [
