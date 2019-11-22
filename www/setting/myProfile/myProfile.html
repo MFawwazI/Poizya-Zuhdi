@@ -12,6 +12,16 @@
   <link rel="stylesheet" href="../../css/adminlte.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
   <script src="../../js/jquery-3.1.1.min.js"></script>
+  <script src="../../js/jquery.validate.min.js"></script>
+  <script src="../../js/profile.js"></script>
+  <script>
+    $(document).ready(function () {
+      if (sessionStorage.getItem("username") === null) {
+        alert("You must login first!");
+        window.location = "login.html";
+      }
+    });
+  </script>
 
   <style>
     .nav-tabs>li>a,
@@ -100,10 +110,9 @@
               <img class="profile-user-img img-fluid img-circle" src="../../img/user1-128x128.jpg"
                 alt="User profile picture" />
             </div>
-            <h3 class="profile-username text-center">Alfan Zuhdi</h3>
+            <h3 id="nameprofile" class="profile-username text-center"></h3>
 
-            <p class="text-muted text-center" style="color: #666666 !important;">
-              Software Engineer
+            <p id="bioprofile" class="text-muted text-center" style="color: #666666 !important;">
             </p>
           </div>
         </div>
@@ -111,122 +120,187 @@
         <!-- Profile Data -->
         <div class="col-md-12">
           <ul class="products-list product-list-in-card pl-2 pr-2">
+              <form id="profile-form" method="post" >
+            <div id="errorDiv"></div>
             <!-- item -->
             <li class="item">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    Name
-                  </span>
-                </div>
-                <input onClick="this.select();" type="text" class="form-control" name="name" value="Alfan Zuhdi" />
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="fas fa-chevron-right fa-sm"></i>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      Name
+                    </span>
+                  </div>
+                  <input onClick="this.select();" type="text" class="form-control" name="name" id="name" />
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <i class="fas fa-chevron-right fa-sm"></i>
+                    </div>
                   </div>
                 </div>
+                <span class="help-block" id="error"></span>
               </div>
             </li>
             <!-- /.item -->
             <li class="item">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    Username
-                  </span>
-                </div>
-                <input onClick="this.select();" type="text" class="form-control" name="username" value="Zuhdi123"
-                  disabled />
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="fas fa-chevron-right fa-sm disabled"></i>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      Username
+                    </span>
+                  </div>
+                  <input onClick="this.select();" type="text" class="form-control" name="username" id="username"
+                    disabled />
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <i class="fas fa-chevron-right fa-sm disabled"></i>
+                    </div>
                   </div>
                 </div>
+                <span class="help-block" id="error"></span>
               </div>
             </li>
             <!-- /.item -->
             <li class="item">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    Bio
-                  </span>
-                </div>
-                <input onClick="this.select();" type="text" class="form-control" name="bio" value="Software Engineer" />
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="fas fa-chevron-right fa-sm"></i>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      Bio
+                    </span>
+                  </div>
+                  <input onClick="this.select();" type="text" class="form-control" name="bio" id="bio" />
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <i class="fas fa-chevron-right fa-sm"></i>
+                    </div>
                   </div>
                 </div>
+                <span class="help-block" id="error"></span>
               </div>
             </li>
             <!-- /.item -->
             <li class="item">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    Gender
-                  </span>
-                </div>
-                <input onClick="this.select();" type="text" class="form-control" name="gender" value="Male" />
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="fas fa-chevron-right fa-sm"></i>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      Gender
+                    </span>
+                  </div>
+                  <!-- <select name="gender" class="form-control">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select> -->
+                  <input onClick="this.select();" type="text" class="form-control" name="gender" id="gender" />
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <i class="fas fa-chevron-right fa-sm"></i>
+                    </div>
                   </div>
                 </div>
+                <span class="help-block" id="error"></span>
               </div>
             </li>
             <!-- /.item -->
             <li class="item">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    Birthday
-                  </span>
-                </div>
-                <input onClick="this.select();" type="text" class="form-control" name="birtday" value="13-11-1997" />
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="fas fa-chevron-right fa-sm"></i>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      Birthday
+                    </span>
+                  </div>
+                  <input onClick="this.select();" type="date" class="form-control" name="birtday" id="birthday" />
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <i class="fas fa-chevron-right fa-sm"></i>
+                    </div>
                   </div>
                 </div>
+                <span class="help-block" id="error"></span>
               </div>
             </li>
             <!-- /.item -->
             <li class="item">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    Phone
-                  </span>
-                </div>
-                <input onClick="this.select();" type="text" class="form-control" name="phone" value="0813-9550-xxxx" />
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="fas fa-chevron-right fa-sm"></i>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      Phone
+                    </span>
+                  </div>
+                  <input onClick="this.select();" type="number" class="form-control" name="phone" id="phone_number" />
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <i class="fas fa-chevron-right fa-sm"></i>
+                    </div>
                   </div>
                 </div>
+                <span class="help-block" id="error"></span>
               </div>
             </li>
             <!-- /.item -->
             <li class="item">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    Email
-                  </span>
-                </div>
-                <input onClick="this.select();" type="email" class="form-control" name="email"
-                  value="Alfan.Z@gmail.com" />
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="fas fa-chevron-right fa-sm"></i>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      Email
+                    </span>
+                  </div>
+                  <input onClick="this.select();" type="email" class="form-control" name="email" id="email" />
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <i class="fas fa-chevron-right fa-sm"></i>
+                    </div>
                   </div>
                 </div>
+                <span class="help-block" id="error"></span>
               </div>
             </li>
+            <li class="item">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      Address
+                    </span>
+                  </div>
+                  <input onClick="this.select();" type="text" class="form-control" name="address" id="address" />
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <i class="fas fa-chevron-right fa-sm"></i>
+                    </div>
+                  </div>
+                </div>
+                <span class="help-block" id="error"></span>
+              </div>
+            </li>
+            <li class="item">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      Portal Code
+                    </span>
+                  </div>
+                  <input onClick="this.select();" type="number" class="form-control" name="portal_code"
+                    id="portal_code" />
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <i class="fas fa-chevron-right fa-sm"></i>
+                    </div>
+                  </div>
+                </div>
+                <span class="help-block" id="error"></span>
+              </div>
+            </li>
+            <input id="btn-changeprofile" type="submit" name="submit" class="btn btn-primary" value="Save" style="width: 100%;">
           </ul>
         </div>
+        </form>
 
         <!-- Photo Modal -->
         <div class="modal fade" id="photo-modal">

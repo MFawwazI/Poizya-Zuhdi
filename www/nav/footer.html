@@ -16,8 +16,8 @@
     font-size: 12px;
   }
 
-  .esm-icon > span,
-  .esm-icon > i,
+  .esm-icon>span,
+  .esm-icon>i,
   .esm-icon {
     /* opacity: 0.85; */
     /* min-width: 55px;
@@ -45,8 +45,8 @@
   }
 
   .footerMenu,
-  .footerMenu > span,
-  .footerMenu > i {
+  .footerMenu>span,
+  .footerMenu>i {
     display: block;
     color: #869099;
     opacity: 0.85;
@@ -54,8 +54,8 @@
 
   /* Style the active class, and buttons on mouse-over */
   .footerActive,
-  .footerActive > span,
-  .footerActive > i,
+  .footerActive>span,
+  .footerActive>i,
   .footerMenu:hover,
   a.footerActive {
     display: block;
@@ -81,12 +81,12 @@
 </!-->
 
 <script>
-  $(function() {
+  $(function () {
     // var currentPage = window.location.pathname.split("/")[7];
     var currentPage = window.location.pathname.split("/").pop();
     // console.log("Split : ", window.location.pathname.split("/").pop());
     // console.log("Path : ", currentPage);
-    $("#Footer a").each(function() {
+    $("#Footer a").each(function () {
       var $this = $(this);
       // console.log("This : ", $this.attr("href"), " Path : ", currentPage);
       if ($this.attr("href").indexOf(currentPage) !== -1) {
@@ -97,10 +97,7 @@
 </script>
 
 <!-- Navbar -->
-<nav
-  class="main-footer navbar navbar-white navbar-light block icon-bar"
-  id="Footer"
->
+<nav class="main-footer navbar navbar-white navbar-light block icon-bar" id="Footer">
   <a class="btn.btn-app footerMenu" href="dashboard.html" id="navHome">
     <i class="fas fa-home fa-lg"></i>
     <span>Home</span>
