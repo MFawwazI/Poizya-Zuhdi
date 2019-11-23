@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
   <link rel="stylesheet" href="css/adminlte.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
-  <script src="../../js/jquery-3.1.1.min.js"></script>
-  <script src="../../js/profile.js"></script>
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/profile.js"></script>
 
   <style>
     .nav-tabs>li>a,
@@ -92,6 +93,7 @@
                     </div>
                   </div>
                   <!-- error -->
+                  <input type="hidden" id="id">
                   <input type="hidden" id="name">
                   <input type="hidden" id="username">
                   <input type="hidden" id="bio">
@@ -101,7 +103,6 @@
                   <input type="hidden" id="email">
                   <input type="hidden" id="address">
                   <input type="hidden" id="portal_code">
-
                   <!-- error -->
                   <div class="tab-pane fade" id="custom-content-above-order" role="tabpanel"
                     aria-labelledby="custom-content-above-order-tab">

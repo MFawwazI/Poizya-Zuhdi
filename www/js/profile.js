@@ -23,6 +23,7 @@ $('document').ready(function ($) {
                         bio = field.bio;
                     }
                     $('#bioprofile').html(bio);
+                    document.getElementById("id").value = field.id;
                     document.getElementById("name").value = field.name;
                     document.getElementById("username").value = field.username;
                     document.getElementById("bio").value = field.bio;

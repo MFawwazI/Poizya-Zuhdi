@@ -122,6 +122,7 @@
           <ul class="products-list product-list-in-card pl-2 pr-2">
               <form id="profile-form" method="post" >
             <div id="errorDiv"></div>
+            <input type="hidden" name="id" id="id">
             <!-- item -->
             <li class="item">
               <div class="form-group">
@@ -212,7 +213,7 @@
                       Birthday
                     </span>
                   </div>
-                  <input onClick="this.select();" type="date" class="form-control" name="birtday" id="birthday" />
+                  <input onClick="this.select();" type="date" class="form-control" name="birthday" id="birthday" />
                   <div class="input-group-append">
                     <div class="input-group-text">
                       <i class="fas fa-chevron-right fa-sm"></i>
@@ -250,7 +251,7 @@
                       Email
                     </span>
                   </div>
-                  <input onClick="this.select();" type="email" class="form-control" name="email" id="email" />
+                  <input onClick="this.select();" type="email" class="form-control" name="email" id="email" disabled/>
                   <div class="input-group-append">
                     <div class="input-group-text">
                       <i class="fas fa-chevron-right fa-sm"></i>
@@ -322,7 +323,7 @@
                     <input type="file" class="custom-file-input" id="background-picture" />
                   </div>
                 </div>
-                <div><span>Remove Profile Picture</span></div>
+                <div><span>Remove Background Picture</span></div>
               </div>
             </div>
           </div>
