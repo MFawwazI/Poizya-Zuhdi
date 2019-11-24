@@ -131,7 +131,10 @@
                       aria-labelledby="custom-content-above-all-tab"
                     >
                       <div class="col-md-12">
-                        All
+                        <div
+                          class="all"
+                          style="padding-bottom: 1em; padding-top: 1em;"
+                        ></div>
                       </div>
                     </div>
                     <!-- To Pay Content -->
@@ -142,7 +145,10 @@
                       aria-labelledby="custom-content-above-topay-tab"
                     >
                       <div class="col-md-12">
-                        To Pay
+                        <div
+                          class="toPay"
+                          style="padding-bottom: 1em; padding-top: 1em;"
+                        ></div>
                       </div>
                     </div>
                     <!-- On Progress Content -->
@@ -153,7 +159,10 @@
                       aria-labelledby="custom-content-above-onprogress-tab"
                     >
                       <div class="col-md-12">
-                        On Progress
+                        <div
+                          class="onProgress"
+                          style="padding-bottom: 1em; padding-top: 1em;"
+                        ></div>
                       </div>
                     </div>
                     <!-- Completed Content -->
@@ -164,7 +173,10 @@
                       aria-labelledby="custom-content-above-completed-tab"
                     >
                       <div class="col-md-12">
-                        Completed
+                        <div
+                          class="completed"
+                          style="padding-bottom: 1em; padding-top: 1em;"
+                        ></div>
                       </div>
                     </div>
                     <!-- Canceled Content -->
@@ -175,7 +187,10 @@
                       aria-labelledby="custom-content-above-canceled-tab"
                     >
                       <div class="col-md-12">
-                        Canceled
+                        <div
+                          class="canceled"
+                          style="padding-bottom: 1em; padding-top: 1em;"
+                        ></div>
                       </div>
                     </div>
                   </div>
@@ -189,6 +204,11 @@
 
     <script>
       $(".header").load("headerOrderList.html");
+      $(".all").load("all.html");
+      $(".toPay").load("toPay.html");
+      $(".onProgress").load("onProgress.html");
+      $(".completed").load("completed.html");
+      $(".canceled").load("canceled.html");
     </script>
 
     <!-- jQuery -->

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Poizya Zuhdi | Shop</title>
+    <title>Poizya Zuhdi | Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -41,13 +41,27 @@
         top: 0;
         right: 0;
       }
+
+      .favorite > i {
+        /* -webkit-text-stroke-color: black; */
+        color: #869099;
+        opacity: 0.85;
+        /* -webkit-text-stroke-width: 1px; */
+      }
+
       .btn-app {
-        background-color: transparent;
+        background-color: white;
         border: 0;
         margin: 0.5em;
         padding: 0.5em;
         height: auto;
         min-width: auto;
+      }
+
+      .product-name {
+        font-weight: bold;
+        width: -webkit-fill-available;
+        text-transform: uppercase;
       }
     </style>
   </head>
@@ -65,32 +79,47 @@
               class="card-img-top"
               src="img/Product/001.jpg"
               alt="product-001"
+              onclick="location.href = 'product/product.html'"
             />
             <a class="btn btn-app favorite">
-              <i
-                class="fas fa-heart"
-                style="-webkit-text-stroke-color: black; color: transparent;
-    -webkit-text-stroke-width: 1px;"
-              ></i>
+              <i class="fas fa-heart"></i>
             </a>
           </div>
-          <div class="card-body">
-            <span style="font-weight: bold;">Pierce Alexander</span>
-            <span>Rp. 1.000.000</span>
+          <div
+            class="card-body"
+            onclick="location.href = 'product/product.html'"
+          >
+            <div class="row">
+              <span class="product-name">
+                Pierce Alexander aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </span>
+            </div>
+            <div class="row">
+              <span style="opacity: 0.7;">Rp. 1.000.000</span>
+            </div>
           </div>
         </div>
         <div class="card">
           <div class="card-header border-0">
             <img
               class="card-img-top"
-              src="img/Product/001.jpg"
+              src="img/boxed-bg.jpg"
               alt="product-001"
             />
             <a class="btn btn-app favorite">
-              <i class="fas fa-heart" style="color: red;"></i>
+              <i class="fas fa-heart"></i>
             </a>
           </div>
-          <div class="card-body"></div>
+          <div class="card-body">
+            <div class="row">
+              <span class="product-name">
+                Pierce Alexander
+              </span>
+            </div>
+            <div class="row">
+              <span style="opacity: 0.7;">Rp. 1.000.000</span>
+            </div>
+          </div>
         </div>
         <div class="card">
           <div class="card-header border-0">
