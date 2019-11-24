@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Poizya | Setting</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="../css/plugins/fontawesome-free/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-    />
-    <link rel="stylesheet" href="../css/adminlte.min.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-      rel="stylesheet"
-    />
-    <script src="../js/jquery-3.1.1.min.js"></script>
 
-    <style>
-      .nav-tabs > li > a,
-      li > div > a,
-      li > div > i,
-      li > div > span {
-        color: #869099;
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Poizya | Setting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/plugins/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+  <link rel="stylesheet" href="../css/adminlte.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      if (sessionStorage.getItem("username") === null) {
+        alert("You must login first!");
+        window.location = "login.html";
       }
+    });
+  </script>
 
-      .profile-username {
-        color: #ffffff;
-      }
+  <style>
+    .nav-tabs>li>a,
+    li>div>a,
+    li>div>i,
+    li>div>span {
+      color: #869099;
+    }
 
       .modal-dialog {
         margin: 2rem;
@@ -140,25 +137,29 @@
                     </div>
                   </div>
                 </div>
-                <!-- End Logout Modal -->
               </div>
             </li>
           </ul>
       </div>
+      </li>
+      </ul>
     </div>
-    <!-- ./wrapper -->
+  </div>
+  </div>
+  <!-- ./wrapper -->
 
-    <script>
-      $(".header").load("headerSetting.html");
-    </script>
+  <script>
+    $(".header").load("headerSetting.html");
+  </script>
 
-    <!-- jQuery -->
-    <script src="../css/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../js/template/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../js/template/demo.js"></script>
-  </body>
+  <!-- jQuery -->
+  <script src="../css/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../js/template/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../js/template/demo.js"></script>
+</body>
+
 </html>

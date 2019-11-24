@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Poizya Zuhdi | Login</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Poizya Zuhdi | Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -19,6 +20,8 @@
       rel="stylesheet"
     />
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/register.js"></script>
     <style>
       body {
         height: auto;
@@ -63,20 +66,28 @@
         text-align: center;
       }
 
+      .btn {
+        margin: 0.5em 0;
+        text-align: center;
+      }
+
       .separator {
         display: flex;
         align-items: center;
         text-align: center;
       }
+
       .separator::before,
       .separator::after {
         content: "";
         flex: 1;
         border-bottom: 1px solid #000;
       }
+
       .separator::before {
         margin-right: 0.25em;
       }
+
       .separator::after {
         margin-left: 0.25em;
       }
@@ -92,58 +103,92 @@
         <div>
           <h5 class="col-12" style="float: left;">Sign up</h5>
 
-          <form action="" method="post">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Username" />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-user"></span>
+          <form id="register-form" method="post">
+            <div id="errorDiv"></div>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  class="form-control"
+                  placeholder="Username"
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                  </div>
                 </div>
               </div>
+              <span class="help-block" id="error"></span>
             </div>
-            <div class="input-group mb-3">
-              <input type="email" class="form-control" placeholder="Email" />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-envelope"></span>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Email"
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
                 </div>
               </div>
+              <span class="help-block" id="error"></span>
             </div>
-            <div class="input-group mb-3">
-              <input
-                type="number"
-                class="form-control"
-                placeholder="Phone Number"
-              />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-phone"></span>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <input
+                  type="number"
+                  id="phone_number"
+                  name="phone_number"
+                  class="form-control"
+                  placeholder="Phone Number"
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-phone"></span>
+                  </div>
                 </div>
               </div>
+              <span class="help-block" id="error"></span>
             </div>
-            <div class="input-group mb-3">
-              <input
-                type="password"
-                class="form-control"
-                placeholder="Password"
-              />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-key"></span>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Password"
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-key"></span>
+                  </div>
                 </div>
               </div>
+              <span class="help-block" id="error"></span>
             </div>
-            <div class="input-group mb-3">
-              <input
-                type="password"
-                class="form-control"
-                placeholder="Confirm Password"
-              />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-key"></span>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <input
+                  type="password"
+                  id="cpassword"
+                  name="cpassword"
+                  class="form-control"
+                  placeholder="Confirm Password"
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-key"></span>
+                  </div>
                 </div>
               </div>
+              <span class="help-block" id="error"></span>
             </div>
             <div class="col-12" style="margin-top: 0.5em;">
               <div class="icheck-primary">
@@ -155,13 +200,13 @@
             </div>
             <!-- /.col -->
             <div class="col-12">
-              <button
-                type="button"
+              <input
+                id="btn-signup"
+                type="submit"
                 class="btn btn-warning btn-block"
-                onclick="location.href='login.html'"
-              >
-                Sign Up
-              </button>
+                name="submit"
+                value="Sign Up"
+              />
             </div>
             <div class="col-12" style="margin-top: 1em;">
               <p class="mb-1" style="text-align: center;">

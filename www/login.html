@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <title>Poizya Zuhdi | Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -19,6 +20,8 @@
       rel="stylesheet"
     />
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/login.js"></script>
     <style>
       body {
         height: auto;
@@ -42,6 +45,16 @@
         border: 0;
         border-bottom: 2px solid black;
       }
+
+      .input-group > .form-control {
+        background-color: transparent;
+        border-color: black;
+      }
+
+      .btn {
+        margin: 0.5em 0;
+        text-align: center;
+      }
       .input-group-text {
         position: absolute;
         top: 0;
@@ -50,11 +63,6 @@
         background-color: transparent;
         border: 0;
         color: inherit;
-      }
-
-      .input-group > .form-control {
-        background-color: transparent;
-        border-color: black;
       }
 
       .btn {
@@ -67,15 +75,18 @@
         align-items: center;
         text-align: center;
       }
+
       .separator::before,
       .separator::after {
         content: "";
         flex: 1;
         border-bottom: 1px solid #000;
       }
+
       .separator::before {
         margin-right: 0.25em;
       }
+
       .separator::after {
         margin-left: 0.25em;
       }
@@ -91,30 +102,41 @@
         <div>
           <h5 class="col-12" style="float: left;">Sign in</h5>
 
-          <form action="" method="post">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Username or Email"
-              />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-user"></span>
+          <form id="login-form" method="post">
+            <div id="errorDiv"></div>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  name="id"
+                  id="id"
+                  class="form-control"
+                  placeholder="Username or Email"
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                  </div>
                 </div>
               </div>
+              <span class="help-block" id="error"></span>
             </div>
-            <div class="input-group mb-3">
-              <input
-                type="password"
-                class="form-control"
-                placeholder="Password"
-              />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-key"></span>
+            <div class="form-group ">
+              <div class="input-group mb-3">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="form-control"
+                  placeholder="Password"
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-key"></span>
+                  </div>
                 </div>
               </div>
+              <span class="help-block" id="error"></span>
             </div>
             <p class="mb-1" style="float: right;">
               <a href="#">I forgot my password</a>
@@ -130,13 +152,13 @@
             </div>
             <!-- /.col -->
             <div class="col-12">
-              <button
-                type="button"
+              <input
+                type="submit"
+                id="btn-signin"
+                name="submit"
                 class="btn btn-primary btn-block"
-                onclick="location.href='dashboard.html';"
-              >
-                Sign In
-              </button>
+                value="Sign In"
+              />
             </div>
             <!-- Separator -->
             <div class="separator">Or</div>
