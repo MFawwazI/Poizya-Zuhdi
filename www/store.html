@@ -1,157 +1,132 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Poizya Zuhdi | Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="css/plugins/fontawesome-free/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-    />
-    <link rel="stylesheet" href="css/adminlte.min.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-      rel="stylesheet"
-    />
-    <script src="js/jquery-3.1.1.min.js"></script>
 
-    <style>
-      .card-header {
-        padding: 0;
-        border-radius: 0.5rem !important;
-      }
-      .card {
-        border-radius: 0.5rem;
-        width: 45vw;
-        margin: 0.5em;
-      }
-      .grid {
-        display: flex;
-        flex-wrap: wrap;
-        margin: auto;
-      }
-      .favorite {
-        border-radius: 50%;
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Poizya Zuhdi | Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/plugins/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+  <link rel="stylesheet" href="css/adminlte.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/store.js"></script>
 
-      .favorite > i {
-        /* -webkit-text-stroke-color: black; */
-        color: #869099;
-        opacity: 0.85;
-        /* -webkit-text-stroke-width: 1px; */
-      }
+  <style>
+    .card-header {
+      padding: 0;
+      border-radius: 0.5rem !important;
+    }
 
-      .btn-app {
-        background-color: white;
-        border: 0;
-        margin: 0.5em;
-        padding: 0.5em;
-        height: auto;
-        min-width: auto;
-      }
+    .card {
+      border-radius: 0.5rem;
+      width: 45vw;
+      margin: 0.5em;
+    }
 
-      .product-name {
-        font-weight: bold;
-        width: -webkit-fill-available;
-        text-transform: uppercase;
-      }
-    </style>
-  </head>
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+    }
 
-  <body
-    class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav"
-    style="height: auto;"
-  >
-    <div class="wrapper">
-      <div class="header"></div>
-      <div class="col-md-12 grid" style="padding: 4em 0 3em 0;">
-        <div class="card">
-          <div class="card-header border-0">
-            <img
-              class="card-img-top"
-              src="img/Product/001.jpg"
-              alt="product-001"
-              onclick="location.href = 'product/product.html'"
-            />
-            <a class="btn btn-app favorite">
-              <i class="fas fa-heart"></i>
-            </a>
+    .favorite {
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .favorite>i {
+      /* -webkit-text-stroke-color: black; */
+      color: #869099;
+      opacity: 0.85;
+      /* -webkit-text-stroke-width: 1px; */
+    }
+
+    .btn-app {
+      background-color: white;
+      border: 0;
+      margin: 0.5em;
+      padding: 0.5em;
+      height: auto;
+      min-width: auto;
+    }
+
+    .product-name {
+      font-weight: bold;
+      width: -webkit-fill-available;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav" style="height: auto;">
+  <div class="wrapper">
+    <div class="header"></div>
+    <div id="store" class="col-md-12 grid" style="padding: 4em 0 3em 0;">
+      <!-- <div class="card">
+        <div class="card-header border-0">
+          <img class="card-img-top" src="img/Product/001.jpg" alt="product-001"
+            onclick="location.href = 'product/product.html'" />
+          <a class="btn btn-app favorite">
+            <i class="fas fa-heart"></i>
+          </a>
+        </div>
+        <div class="card-body" onclick="location.href = 'product/product.html'">
+          <div class="row">
+            <span class="product-name">
+              Pierce Alexander aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            </span>
           </div>
-          <div
-            class="card-body"
-            onclick="location.href = 'product/product.html'"
-          >
-            <div class="row">
-              <span class="product-name">
-                Pierce Alexander aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-              </span>
-            </div>
-            <div class="row">
-              <span style="opacity: 0.7;">Rp. 1.000.000</span>
-            </div>
+          <div class="row">
+            <span style="opacity: 0.7;">Rp. 1.000.000</span>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header border-0">
-            <img
-              class="card-img-top"
-              src="img/boxed-bg.jpg"
-              alt="product-001"
-            />
-            <a class="btn btn-app favorite">
-              <i class="fas fa-heart"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <span class="product-name">
-                Pierce Alexander
-              </span>
-            </div>
-            <div class="row">
-              <span style="opacity: 0.7;">Rp. 1.000.000</span>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header border-0">
-            <img
-              class="card-img-top"
-              src="img/Product/001.jpg"
-              alt="product-001"
-            />
-            <a class="btn btn-app favorite">
-              <i class="fas fa-heart"></i>
-            </a>
-          </div>
-          <div class="card-body"></div>
-        </div>
-        <div class="card">
-          <div class="card-header border-0">
-            <img
-              class="card-img-top"
-              src="img/Product/001.jpg"
-              alt="product-001"
-            />
-            <a class="btn btn-app favorite">
-              <i class="fas fa-heart"></i>
-            </a>
-          </div>
-          <div class="card-body"></div>
+      </div>
+      <div class="card">
+        <div class="card-header border-0">
+          <img class="card-img-top" src="img/boxed-bg.jpg" alt="product-001" />
+          <a class="btn btn-app favorite">
+            <i class="fas fa-heart"></i>
+          </a>
         </div>
         <div class="card-body">
-          <span style="font-weight: bold;">Pierce Alexander</span>
-          <span>Rp. 1.000.000</span>
+          <div class="row">
+            <span class="product-name">
+              Pierce Alexander
+            </span>
+          </div>
+          <div class="row">
+            <span style="opacity: 0.7;">Rp. 1.000.000</span>
+          </div>
         </div>
-      </div> -->
+      </div>
+      <div class="card">
+        <div class="card-header border-0">
+          <img class="card-img-top" src="img/Product/001.jpg" alt="product-001" />
+          <a class="btn btn-app favorite">
+            <i class="fas fa-heart"></i>
+          </a>
+        </div>
+        <div class="card-body"></div>
+      </div>
+      <div class="card">
+        <div class="card-header border-0">
+          <img class="card-img-top" src="img/Product/001.jpg" alt="product-001" />
+          <a class="btn btn-app favorite">
+            <i class="fas fa-heart"></i>
+          </a>
+        </div>
+        <div class="card-body"></div>
+      </div>
+      <div class="card-body">
+        <span style="font-weight: bold;">Pierce Alexander</span>
+        <span>Rp. 1.000.000</span>
+      </div>
+    </div> -->
     </div>
     <div class="footer"></div>
   </div>
