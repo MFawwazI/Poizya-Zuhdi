@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Poizya Zuhdi | Product</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/plugins/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+  <link rel="stylesheet" href="css/adminlte.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/category.js"></script>
+
+  <style>
+    .card-header {
+      padding: 0;
+      border-radius: 0.5rem !important;
+    }
+
+    .card {
+      border-radius: 0.5rem;
+      width: 45vw;
+      margin: 0.5em;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+    }
+
+    .favorite {
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .favorite>i {
+      /* -webkit-text-stroke-color: black; */
+      color: #869099;
+      opacity: 0.85;
+      /* -webkit-text-stroke-width: 1px; */
+    }
+
+    .btn-app {
+      background-color: white;
+      border: 0;
+      margin: 0.5em;
+      padding: 0.5em;
+      height: auto;
+      min-width: auto;
+    }
+
+    .product-name {
+      font-weight: bold;
+      width: -webkit-fill-available;
+      text-transform: uppercase;
+    }
+
+    .headerProduct {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-family: inherit;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #869099;
+      margin-left: 1em;
+    }
+
+    .layout-navbar-fixed .wrapper .main-header {
+      border-color: transparent;
+      border-bottom: 0;
+    }
+
+    .navbar-white {
+      background-color: transparent;
+    }
+
+    .ml-auto {
+      margin-left: 0 !important;
+    }
+  </style>
+</head>
+
+<body class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav" style="height: auto;">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <div class="ml-auto navbar-nav" style="margin-left: 0 !important;">
+      <!-- <ul class="navbar-nav ">
+                    <li class="ml-auto"> -->
+      <a class="nav-link card-title ml-auto" onclick="window.history.back();">
+        <i class="fa fa-arrow-left mr-1 fa-sm " style="color:#869099"></i>
+        <span id="category" class="headerProduct"> </span>
+      </a>
+      <!-- </li>
+                    <li class="ml-2"> -->
+      <a class="nav-link ml-2" href="cart/cart.html">
+        <i class="fas fa-shopping-cart fa-lg " style="color:#869099"></i>
+        <span class="badge badge-danger navbar-badge">3</span>
+      </a>
+      <!-- </li>
+                  </ul> -->
+    </div>
+  </nav>
+  <div class="wrapper">
+    <div id="product_category" class="col-md-12 grid" style="padding: 4em 0 3em 0;">
+    </div>
+    <div class="footer"></div>
+  </div>
+
+  <script>
+    // $(".header").load("productHeader.html");
+    $(".footer").load("../nav/footer.html");
+  </script>
+
+  <script src="css/plugins/jquery/jquery.min.js"></script>
+  <script src="css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/template/adminlte.min.js"></script>
+  <script src="js/template/demo.js"></script>
+</body>
+
+</html>
