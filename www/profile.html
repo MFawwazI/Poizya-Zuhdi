@@ -14,6 +14,14 @@
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/jquery.validate.min.js"></script>
   <script src="js/profile.js"></script>
+  <script>
+    $(document).ready(function () {
+      if (sessionStorage.getItem("username") === null) {
+        alert("You must login first!");
+        window.location = "login.html";
+      }
+    });
+  </script>
 
   <style>
     .nav-tabs>li>a,

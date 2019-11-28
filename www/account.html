@@ -23,6 +23,14 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
     <!-- jQuery -->
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if (sessionStorage.getItem("username") === null) {
+                alert("You must login first!");
+                window.location = "login.html";
+            }
+        });
+    </script>
 </head>
 
 <body class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav" style="height: auto;">
