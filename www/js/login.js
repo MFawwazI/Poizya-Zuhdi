@@ -68,6 +68,7 @@ function submitForm() {
                         window.location.href = 'login.html'
                     }, 3000)
                 } else {
+                    sessionStorage.setItem('id', field.id);
                     sessionStorage.setItem('username', field.username);
                     window.location.href = 'dashboard.html';
                 }

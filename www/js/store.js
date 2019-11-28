@@ -1,4 +1,10 @@
 $("document").ready(function() {
+  var username = sessionStorage.getItem("username");
+  $("#username").val(username);
+
+  var id = sessionStorage.getItem("id");
+  $("#id").val(id);
+
   $.ajax({
     type: "GET",
     url: "php/store.php",
@@ -6,27 +12,57 @@ $("document").ready(function() {
       // console.log(xhr);
       var result = $.parseJSON(xhr.responseText);
       console.log(result);
-      alert("Terjadi kesalahan " + result.error);
+      alert("There is an error " + result.error);
     },
     success: function(data) {
       console.log(data);
       product = "";
       for (var i = 0; i < data.length; i++) {
         product += "<div class='card'>";
-
         product += "<div class='card-header border-0'>";
         product +=
-          "<img class='card-img-top' src='img/Product/" +
+          "<a href='product/product.html?productID=" +
+          data[i].id +
+          "'><img class='card-img-top' src='img/Product/" +
           data[i].name +
           ".jpg' alt='product-" +
           data[i].name +
-          "' />";
+          "' /></a>";
         product += "<a class='btn btn-app favorite'>";
+        $.ajax({
+          type: "POST",
+          url: "php/favorite.php",
+          data: { id_account: id, id_product: data[i].id },
+          error: function(xhr, status, error) {
+            console.log(xhr);
+            console.log("error");
+            var result = $.parseJSON(xhr.responseText);
+            console.log(result);
+          },
+          success: function(b) {
+            console.log(b);
+            if (b == true) {
+              favorite(
+                "<i class='fas fa-heart' style='-webkit-text-stroke-color: black; color: transparent; -webkit-text-stroke-width: 1px;'></i>"
+              );
+            } else {
+              favorite = "<i class='fas fa-heart'></i>";
+            }
+            // $('#store').html(favorite);
+          }
+        });
+        function favorite(param) {
+          product += param;
+          console.log(data[i].name);
+        }
         product +=
-          "<i class='fas fa-heart' style='-webkit-text-stroke-color: black; color: transparent; -webkit-text-stroke-width: 1px;'></i></a></div>";
-        product += "<div class='card-body'>";
+          "</a></div><a class='card-body' href='product/product.html?productID=" +
+          data[i].id +
+          "'>";
         product +=
-          "<span style='font-weight: bold;'>" + data[i].name + "</span><br>";
+          "<span style='font-weight: bold; color: black;'>" +
+          data[i].name +
+          "</span><br>";
         var harga = parseFloat(data[i].price);
         var bil = harga;
         var number_string = bil.toString(),
@@ -38,8 +74,8 @@ $("document").ready(function() {
           separatornya = sisanya ? "." : "";
           rupiahnya += separatornya + ribu.join(".");
         }
-        product += "<span>Rp." + rupiahnya + "</span>";
-        product += "</div>";
+        product += "<span style='color: black;'>Rp." + rupiahnya + "</span>";
+        product += "</a>";
         product += "</div>";
       }
       $("#store").html(product);
