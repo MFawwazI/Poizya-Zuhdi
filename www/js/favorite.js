@@ -3,10 +3,13 @@ $('document').ready(function () {
     $.ajax({
         type: 'POST',
         url: 'php/fav.php',
-        data: { id_account: id },
+        data: { id: id },
         success: function (data) {
-            if (data != null) {
-                console.log(data);
+            console.log(data);
+            if (data == null) {
+                product = " There are no favorites yet";
+                $('#favorite').html(product);
+            } else {
                 product = "";
                 for (var i = 0; i < data.length; i++) {
                     product += "<div class='card'>";
@@ -32,9 +35,7 @@ $('document').ready(function () {
                     product += "</div>";
                 }
                 $('#favorite').html(product);
-            } else {
-                product = " There are no favorites yet";
-                $('#favorite').html(product);
+
             }
 
         }
