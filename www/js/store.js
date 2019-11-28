@@ -21,9 +21,9 @@ $('document').ready(function () {
                     success: function (b) {
                         // console.log(b);
                         if (b == true) {
-                            var favorite = "<i class='fas fa-heart' style='color:red;'></i>";
+                            var favorite = "<button id='test' class='btn btn-outline-light' onclick='startAjax();'><i class='fas fa-heart' style='color:red;'></i></button>";
                         } else {
-                            var favorite = "<i class='fas fa-heart' style='-webkit-text-stroke-color: black; color: transparent; -webkit-text-stroke-width: 1px;'></i>";
+                            var favorite = "<button id='test' class='btn btn-outline-light' onclick='startAjax();'><i class='fas fa-heart' style='-webkit-text-stroke-color: black; color: transparent; -webkit-text-stroke-width: 1px;'></i></button>";
                         }
                         // console.log("j=" + j);
                         localStorage.setItem(j, favorite);
@@ -59,4 +59,8 @@ $('document').ready(function () {
             $('#store').html(product);
         }
     });
+    function startAjax() {
+        console.log("test");
+    }
+    $(document).ready(startAjax);
 });
