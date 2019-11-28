@@ -16,8 +16,13 @@
     $(document).ready(function () {
       if (sessionStorage.getItem("username") === null) {
         alert("You must login first!");
-        window.location = "login.html";
+        window.location = "../login.html";
       }
+      $('#logout').click(function () {
+        localStorage.clear();
+        sessionStorage.clear();
+        document.location.href = '../login.html';
+      });
     });
   </script>
 
@@ -29,121 +34,97 @@
       color: #869099;
     }
 
-      .modal-dialog {
-        margin: 2rem;
-      }
-    </style>
-  </head>
-  <body
-    class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav"
-    style="height: auto;"
-  >
-    <div class="wrapper">
-      <div class="header"></div>
-      <div
-        style="background-color: #e5e5e5; padding: 1.9em;text-align:center;"
-      ></div>
-        <div class="col-md-12">
-          <ul class="products-list product-list-in-card pl-2 pr-2">
-            <li class="item">
-              <div onclick="location.href='myProfile/myProfile.html';">
-                <a href="#" class="product-title"
-                  ><span style="flex: 2">My Profile</span>
-                  <i
-                    class="fa fa-chevron-right"
-                    style="float: right; flex: 1"
-                  ></i
-                ></a>
-              </div>
-            </li>
-            <!-- /.item -->
-            <li class="item">
-              <div onclick="location.href='password/password.html';">
-                <a href="javascript:void(0)" class="product-title"
-                  >Change Password
-                  <i class="fa fa-chevron-right" style="float: right"></i
-                ></a>
-              </div>
-            </li>
-            <!-- /.item -->
-            <li class="item">
-              <div>
-                <a href="javascript:void(0)" class="product-title">
-                  Notification
-                  <i class="fa fa-chevron-right" style="float: right"></i>
-                </a>
-              </div>
-            </li>
-            <!-- /.item -->
-            <li class="item">
-              <div>
-                <a href="javascript:void(0)" class="product-title"
-                  >About <i class="fa fa-chevron-right" style="float: right"></i
-                ></a>
-              </div>
-            </li>
-            <!-- /.item -->
-            <li class="item">
-              <div>
-                <a href="javascript:void(0)" class="product-title">
-                  Help<i class="fa fa-chevron-right" style="float: right"></i>
-                </a>
-              </div>
-            </li>
-            <!-- /.item -->
-            <li class="item">
-              <div data-toggle="modal" data-target="#logout-modal">
-                <!-- <a href="#" class="card-title"> -->
-                <i class="fa fa-sign-out-alt mr-1 fa-sm"></i>
-                <span>Logout</span>
-                <!-- </a> -->
-                <!-- Logout Modal -->
-                <div class="modal fade" id="logout-modal">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                          <h4 class="modal-title">Logout From Poizya</h4>
-                          <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                          >
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <p>Are you sure want to logout ?</p>
-                        </div>
-                        <div class="modal-footer justify-content-between">
-                          <button
-                            type="button"
-                            class="btn btn-default"
-                            data-dismiss="modal"
-                            style="float: right;"
-                          >
-                            Cancel
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-primary"
-                            style="float: right;"
-                            onclick="location.href='../login.html';"
-                          >
-                            Logout
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+    .modal-dialog {
+      margin: 2rem;
+    }
+  </style>
+</head>
+
+<body class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav" style="height: auto;">
+  <div class="wrapper">
+    <div class="header"></div>
+    <div style="background-color: #e5e5e5; padding: 1.9em;text-align:center;"></div>
+    <div class="col-md-12">
+      <ul class="products-list product-list-in-card pl-2 pr-2">
+        <li class="item">
+          <div onclick="location.href='myProfile/myProfile.html';">
+            <a href="#" class="product-title"><span style="flex: 2">My Profile</span>
+              <i class="fa fa-chevron-right" style="float: right; flex: 1"></i></a>
+          </div>
+        </li>
+        <!-- /.item -->
+        <li class="item">
+          <div onclick="location.href='password/password.html';">
+            <a href="javascript:void(0)" class="product-title">Change Password
+              <i class="fa fa-chevron-right" style="float: right"></i></a>
+          </div>
+        </li>
+        <!-- /.item -->
+        <li class="item">
+          <div>
+            <a href="javascript:void(0)" class="product-title">
+              Notification
+              <i class="fa fa-chevron-right" style="float: right"></i>
+            </a>
+          </div>
+        </li>
+        <!-- /.item -->
+        <li class="item">
+          <div>
+            <a href="javascript:void(0)" class="product-title">About <i class="fa fa-chevron-right"
+                style="float: right"></i></a>
+          </div>
+        </li>
+        <!-- /.item -->
+        <li class="item">
+          <div>
+            <a href="javascript:void(0)" class="product-title">
+              Help<i class="fa fa-chevron-right" style="float: right"></i>
+            </a>
+          </div>
+        </li>
+        <!-- /.item -->
+        <li class="item">
+          <div data-toggle="modal" data-target="#logout-modal">
+            <!-- <a href="#" class="card-title"> -->
+            <i class="fa fa-sign-out-alt mr-1 fa-sm"></i>
+            <span>Logout</span>
+            <!-- </a> -->
+            <!-- Logout Modal -->
+            <div class="modal fade" id="logout-modal">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Logout From Poizya</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure want to logout ?</p>
+                  </div>
+                  <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">
+                      Cancel
+                    </button>
+                    <input id="logout" type="submit" value="Logout" class="btn btn-primary" onclick="logout();"
+                      style="float: right;">
+                    <!-- <button type="button" class="btn btn-primary" style="float: right;"
+                      onclick="location.href='../login.html';">
+                      Logout
+                    </button> -->
                   </div>
                 </div>
               </div>
-            </li>
-          </ul>
-      </div>
-      </li>
-      </ul>
+            </div>
+          </div>
     </div>
+    </li>
+    </ul>
+  </div>
+  </li>
+  </ul>
+  </div>
   </div>
   </div>
   <!-- ./wrapper -->
