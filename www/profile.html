@@ -13,9 +13,40 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/jquery.validate.min.js"></script>
-  <script src="js/profile.js"></script>
+  <!-- <script src="js/profile.js"></script> -->
   <script>
     $(document).ready(function () {
+      var username = sessionStorage.getItem('username');
+      $('#username').val(username);
+
+      if (username != '') {
+        $.ajax({
+          type: 'POST',
+          url: 'php/profile.php',
+          data: { username: username },
+          success: function (result) {
+            console.log(result);
+            $.each(result, function (i, field) {
+              if (field.name === null) {
+                nameprofile = field.username;
+              } else {
+                nameprofile = field.name;
+              }
+              $('#nameprofile').html(nameprofile);
+
+              if (field.bio === null) {
+                bio = "-";
+              } else {
+                bio = field.bio;
+              }
+              $('#bioprofile').html(bio);
+              e = field.portal_code;
+            });
+          }
+        });
+      } else {
+        alert("Data not found");
+      }
       if (sessionStorage.getItem("username") === null) {
         alert("You must login first!");
         window.location = "login.html";

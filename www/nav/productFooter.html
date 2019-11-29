@@ -1,0 +1,61 @@
+<!-- Footer -->
+<nav class="main-footer navbar block icon-bar">
+  <div class="ml-auto navbar-nav" style="margin-left: 0 !important;">
+    <div class="btn-group">
+      <form id="addcart-form" method="post">
+        <input type="hidden" id="idproduct" name="idproduct" />
+        <input type="hidden" id="idaccount" name="idaccount" />
+        <input type="submit" class="btn btn-block btn-warning" name="submit"
+          value="                             Add to cart                             " />
+      </form>
+      <!-- <button type="button" class="btn btn-block btn-warning" onclick="location.href='../cart/cart.html'">
+        Add to cart
+      </button> -->
+      <div id="favorite"></div>
+      <!-- <a id="favorite" type="button" class="btn btn-light">
+      </a> -->
+    </div>
+  </div>
+</nav>
+<!-- /.footer -->
+
+<style>
+  .main-footer {
+    color: black;
+  }
+</style>
+<script>
+  $('document').ready(function () {
+    var urlParams = new URLSearchParams(window.location.search);
+    console.log('ID product =', urlParams.get('productID'));
+    $("#idproduct").val(urlParams.get('productID'));
+
+    var id = sessionStorage.getItem('id');
+    console.log('ID account =', id);
+    $("#idaccount").val(id);
+
+    $("#favorite").html(localStorage.getItem(urlParams.get('productID')));
+
+    $('#addcart-form').on('submit', function (e) {
+      e.preventDefault();
+      console.log($('#addcart-form').serialize())
+      $.ajax({
+        type: 'POST',
+        url: '../php/addcart.php',
+        data: $('#addcart-form').serialize(),
+        async: false,
+        success: function (a) {
+          if (a == 0) {
+            $("#addcart-form").trigger('reset');
+            alert('An unknown error occurred, please try again later...');
+          } else {
+            var result = $.parseJSON(a);
+            if (result.status === 'success') {
+              window.location.href = '../cart/cart.html'
+            }
+          }
+        }
+      });
+    });
+  });
+</script>

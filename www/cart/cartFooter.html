@@ -3,14 +3,14 @@
   <div class="ml-auto navbar-nav" style="margin-left: 0 !important;">
     <div class="row">
       <div class="column product">
-        <span style="font-weight: bold;">1 </span><span>Selected Product</span>
+        <span id="selected" style="font-weight: bold;"> </span><span> Selected Product</span>
       </div>
       <div class="column" style="text-align: right;">
         <div class="column">
           <span>Total Price</span>
         </div>
         <div class="column">
-          <span style="font-weight: bold;">Rp. 1.000.000</span>
+          <span id="totalprice" style="font-weight: bold;"></span>
         </div>
       </div>
     </div>
@@ -24,15 +24,53 @@
 <!-- /.footer -->
 
 <style>
-  .row > .column {
+  .row>.column {
     flex: 1;
     padding-bottom: 0.5em;
   }
+
   .main-footer {
     color: black;
     padding: 0.5em 1em;
   }
+
   .product {
     align-self: flex-end;
   }
 </style>
+
+<script>
+  $('document').ready(function () {
+    var id = sessionStorage.getItem('id');
+    $.ajax({
+      type: 'POST',
+      url: '../php/cart.php',
+      data: { id: id },
+      success: function (data) {
+        if (data == null) {
+          $('#selected').html("0");
+          $('#totalprice').html("Rp.0");
+        } else {
+          totalprice = 0;
+          for (var i = 0; i < data.length; i++) {
+            var harga = parseFloat(data[i].price);
+            totalprice += harga;
+          }
+          var bil = totalprice;
+          var number_string = bil.toString(),
+            sisanya = number_string.length % 3,
+            rupiahnya = number_string.substr(0, sisanya),
+            ribu = number_string.substr(sisanya).match(/\d{3}/g);
+
+          if (ribu) {
+            separatornya = sisanya ? '.' : '';
+            rupiahnya += separatornya + ribu.join('.');
+          }
+          $('#selected').html(i);
+          $('#totalprice').html("Rp." + rupiahnya);
+        }
+
+      }
+    });
+  });
+</script>

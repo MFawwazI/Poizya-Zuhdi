@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <title>Poizya Zuhdi | Favorite</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+</head>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var urlParams = new URLSearchParams(window.location.search);
+        console.log('ID product =', urlParams.get('productID'));
+        $("#idproduct").val(urlParams.get('productID'));
+
+        var id = sessionStorage.getItem('id');
+        console.log('ID account =', id);
+        $("#idaccount").val(id);
+        window.onload = function () {
+            var auto = setTimeout(function () { autoRefresh(); }, 100);
+
+            function submitform() {
+                document.forms["addfavorite-form"].submit();
+                console.log($('#addfavorite-form').serialize());
+                $.ajax({
+                    type: 'POST',
+                    url: '../php/addfavorite.php',
+                    data: $('#addfavorite-form').serialize(),
+                    async: false,
+                    success: function (a) {
+                        if (a == 0) {
+                            $("#addfavorite-form").trigger('reset');
+                            alert('An unknown error occurred, please try again later...');
+                        } else {
+                            var result = $.parseJSON(a);
+                            if (result.status === 'success') {
+                                window.location.href = '../store.html'
+                            }
+                        }
+                    }
+                });
+                window.location.href = '../store.html'
+            }
+
+            function autoRefresh() {
+                clearTimeout(auto);
+                auto = setTimeout(function () { submitform(); autoRefresh(); }, 100);
+            }
+        }
+    });
+</script>
+
+<body>
+    <form id="addfavorite-form" method="POST">
+        <input type="hidden" id="idproduct" name="idproduct" />
+        <input type="hidden" id="idaccount" name="idaccount" />
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+
+</html>

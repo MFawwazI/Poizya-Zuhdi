@@ -21,12 +21,11 @@ $('document').ready(function () {
                     success: function (b) {
                         // console.log(b);
                         if (b == true) {
-                            var favorite = "<button id='test' class='btn btn-outline-light' onclick='startAjax();'><i class='fas fa-heart' style='color:red;'></i></button>";
+                            var favorite = "<a href='parsing/removefavorite.html?productID=" + data[j].id + "' class='btn btn-app favorite'><i class='fas fa-heart' style='color:red;'></i></a>";
                         } else {
-                            var favorite = "<button id='test' class='btn btn-outline-light' onclick='startAjax();'><i class='fas fa-heart' style='-webkit-text-stroke-color: black; color: transparent; -webkit-text-stroke-width: 1px;'></i></button>";
+                            var favorite = "<a href='parsing/addfavorite.html?productID=" + data[j].id + "' class='btn btn-app favorite'><i class='far fa-heart'></i></a>";
                         }
-                        // console.log("j=" + j);
-                        localStorage.setItem(j, favorite);
+                        localStorage.setItem(data[j].id, favorite);
                     }
                 })
             }
@@ -34,12 +33,9 @@ $('document').ready(function () {
             for (var i = 0; i < data.length; i++) {
                 product += "<div class='card'>";
                 product += "<div class='card-header border-0'>";
-                product += "<a href='product/product.html?productID=" + data[i].id + "'><img class='card-img-top' src='img/Product/" + data[i].name + ".jpg' alt='product-" + data[i].name + "' /></a>";
-                product += "<a class='btn btn-app favorite'>";
-                // console.log("i=" + i);
-                // console.log(localStorage.getItem(i));
-                product += localStorage.getItem(i);
-                product += "</a></div><a class='card-body' href='product/product.html?productID=" + data[i].id + "'>"
+                product += "<a href='product.html?productID=" + data[i].id + "'><img class='card-img-top' src='img/Product/" + data[i].name + ".jpg' alt='product-" + data[i].name + "' /></a>";
+                product += localStorage.getItem(data[i].id);
+                product += "</div><a class='card-body' href='product.html?productID=" + data[i].id + "'>"
                 product += "<span style='font-weight: bold; color: black;'>" + data[i].name + "</span><br>";
                 var harga = parseFloat(data[i].price);
                 var bil = harga;
@@ -59,8 +55,4 @@ $('document').ready(function () {
             $('#store').html(product);
         }
     });
-    function startAjax() {
-        console.log("test");
-    }
-    $(document).ready(startAjax);
 });

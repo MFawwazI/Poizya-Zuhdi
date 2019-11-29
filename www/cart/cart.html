@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Poizya Zuhdi | Cart</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="../css/plugins/fontawesome-free/css/all.min.css" />
@@ -11,6 +12,33 @@
   <link rel="stylesheet" href="../css/adminlte.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
   <script src="../js/jquery-3.1.1.min.js"></script>
+  <script src="../js/cart.js"></script>
+  <!-- <script src="../js/deletecart.js"></script> -->
+  <script>
+    $('document').ready(function () {
+      $('#deletecart-form').on('submit', function (e) {
+        e.preventDefault();
+        console.log($('#deletecart-form').serialize())
+        $.ajax({
+          type: 'POST',
+          url: '../php/deletecart.php',
+          data: $('#deletecart-form').serialize(),
+          async: false,
+          success: function (a) {
+            if (a == 0) {
+              $("#deletecart-form").trigger('reset');
+              alert('An unknown error occurred, please try again later...');
+            } else {
+              var result = $.parseJSON(a);
+              if (result.status === 'success') {
+                window.location.href = '../cart/cart.html'
+              }
+            }
+          }
+        });
+      });
+    });
+  </script>
 
   <style>
     .card-header {
@@ -59,9 +87,9 @@
   <div class="wrapper">
     <div class="header"></div>
     <div style="background-color: #e5e5e5; padding: 1.9em;text-align:center;"></div>
-    <div class="col-md-12" style="padding-bottom : 3em; padding-top: 1em">
+    <div id="cart" class="col-md-12" style="padding-bottom : 3em; padding-top: 1em">
       <!-- Shopping Cart List -->
-      <div class="callout callout-info" style="height: 15vh;">
+      <!-- <div class="callout callout-info" style="height: 15vh;">
         <div class="row">
           <div class="column" style="flex: 1;">
             <img style="height: -webkit-fill-available;" src="../img/Product/Alexander.jpg" alt="product-Alexander" />
@@ -77,13 +105,8 @@
           <div class="column" style="flex: 1;">
             Jumlah : 5
           </div>
-          <!-- <div class="column" style="flex: 0.5;">
-              <a class="btn btn-app">
-                <i class="fas fa-heart"></i>
-              </a>
-            </div> -->
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="footer"></div>
   </div>
