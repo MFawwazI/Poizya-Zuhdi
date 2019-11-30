@@ -1,5 +1,5 @@
 <?php
-$db = mysqli_connect('localhost', 'dene4871_denny', 'inwardco24', 'dene4871_poizya');
+$db = mysqli_connect('localhost', 'root', '', 'poizya');
 if (!$db) {
     $obj = (object) [
         'error' => 'failed to connect to db'

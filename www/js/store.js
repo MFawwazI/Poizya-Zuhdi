@@ -48,13 +48,16 @@ $("document").ready(function() {
                   // console.log(b);
                   if (b == true) {
                     var favorite =
-                      "<i class='fas fa-heart' style='color:red;'></i>";
+                      "<a href='parsing/removefavorite.html?productID=" +
+                      data[j].id +
+                      "' class='btn btn-app favorite'><i class='fas fa-heart' style='color:red;'></i></a>";
                   } else {
                     var favorite =
-                      "<i class='fas fa-heart' style='-webkit-text-stroke-color: black; color: transparent; -webkit-text-stroke-width: 1px;'></i>";
+                      "<a href='parsing/addfavorite.html?productID=" +
+                      data[j].id +
+                      "' class='btn btn-app favorite'><i class='far fa-heart'></i></a>";
                   }
-                  // console.log("j=" + j);
-                  localStorage.setItem(j, favorite);
+                  localStorage.setItem(data[j].id, favorite);
                 }
               });
             }
@@ -63,19 +66,16 @@ $("document").ready(function() {
               product += "<div class='card'>";
               product += "<div class='card-header border-0'>";
               product +=
-                "<a href='product/product.html?productID=" +
+                "<a href='product.html?productID=" +
                 data[i].id +
                 "'><img class='card-img-top' src='img/Product/" +
                 data[i].name +
                 ".jpg' alt='product-" +
                 data[i].name +
                 "' /></a>";
-              product += "<a class='btn btn-app favorite'>";
-              // console.log("i=" + i);
-              // console.log(localStorage.getItem(i));
-              product += localStorage.getItem(i);
+              product += localStorage.getItem(data[i].id);
               product +=
-                "</a></div><a class='card-body' href='product/product.html?productID=" +
+                "</div><a class='card-body' href='product.html?productID=" +
                 data[i].id +
                 "'>";
               product +=

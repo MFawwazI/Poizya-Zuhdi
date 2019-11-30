@@ -6,18 +6,30 @@
     opacity: 0.85;
   }
 </style> -->
-
+<script>
+  $('document').ready(function () {
+    var id = sessionStorage.getItem('id');
+    $.ajax({
+      type: 'POST',
+      url: 'php/cart.php',
+      data: { id: id },
+      success: function (data) {
+        console.log(data);
+        if (data == null) {
+          $('#selected').html("");
+        } else {
+          $('#selected').html(data.length);
+        }
+      }
+    });
+  });
+</script>
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
   <!-- SEARCH FORM -->
   <form class="form-inline ml-auto">
     <div class="input-group input-group-sm">
-      <input
-        class="form-control form-control-navbar"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
+      <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" />
       <div class="input-group-append">
         <button class="btn btn-navbar" type="submit">
           <i class="fas fa-search"></i>
@@ -32,7 +44,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link" href="cart/cart.html">
         <i class="fas fa-shopping-cart fa-lg headerMenu"></i>
-        <span class="badge badge-danger navbar-badge">3</span>
+        <span id="selected" class="badge badge-danger navbar-badge"></span>
       </a>
     </li>
     <!-- Notifications Dropdown Menu -->
@@ -59,9 +71,7 @@
           <span class="float-right text-muted text-sm">2 days</span>
         </a>
         <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item dropdown-footer"
-          >See All Notifications</a
-        >
+        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
       </div>
     </li>
   </ul>

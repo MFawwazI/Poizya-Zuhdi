@@ -14,10 +14,10 @@ $('document').ready(function () {
                 for (var i = 0; i < data.length; i++) {
                     product += "<div class='card'>";
                     product += "<div class='card-header border-0'>";
-                    product += "<a href='product/product.html?productID=" + data[i].id + "'><img class='card-img-top' src='img/Product/" + data[i].name + ".jpg' alt='product-" + data[i].name + "' /></a>";
-                    product += "<a class='btn btn-app favorite'>";
+                    product += "<a href='product.html?productID=" + data[i].id + "'><img class='card-img-top' src='img/Product/" + data[i].name + ".jpg' alt='product-" + data[i].name + "' /></a>";
+                    product += "<a href='parsing/removefavorite.html?productID=" + data[i].id + "' class='btn btn-app favorite'>";
                     product += "<i class='fas fa-heart'></i>";
-                    product += "</a></div><a class='card-body' href='product/product.html?productID=" + data[i].id + "'>"
+                    product += "</a></div><a class='card-body' href='product.html?productID=" + data[i].id + "'>"
                     product += "<span style='font-weight: bold; color: black;'>" + data[i].name + "</span><br>";
                     var harga = parseFloat(data[i].price);
                     var bil = harga;
