@@ -2,12 +2,21 @@
 <nav class="main-footer navbar block icon-bar">
   <div class="ml-auto navbar-nav" style="margin-left: 0 !important;">
     <div class="btn-group">
-      <button type="button" class="btn btn-block btn-warning">
-        Upload Payment
-      </button>
-      <button type="button" class="btn btn-danger">
-        <i class="fas fa-heart"></i>
-      </button>
+      <div class="custom-file">
+        <input
+          type="file"
+          class="custom-file-input btn-block"
+          id="exampleInputFile"
+        />
+        <label class="payment-label" for="exampleInputFile"
+          >Upload Payment</label
+        >
+      </div>
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-danger">
+          Upload
+        </button>
+      </div>
     </div>
   </div>
 </nav>
@@ -16,5 +25,31 @@
 <style>
   .main-footer {
     color: black;
+    padding: 0.5em;
+  }
+
+  .payment-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-weight: 400 !important;
+    line-height: 1.5;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem 0 0 0.25rem;
+    box-shadow: none;
+    text-align: center;
+    color: #1f2d3d;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    box-shadow: none;
+  }
+
+  .btn {
+    border-radius: 0 0.25rem 0.25rem 0;
   }
 </style>
