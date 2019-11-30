@@ -21,10 +21,10 @@ if ($_POST) {
 
         if ($result) {
             $response['status'] = 'success';
-            $response['message'] = '<span class="fas fa-check"></span> &nbsp; OK! profile change successfully';
+            $response['message'] = '<span class="fas fa-check"></span> &nbsp; OK! profile update successfully';
         } else {
             $response['status'] = 'error';
-            $response['message'] = '<span class="fa fa-info-circle"></span> &nbsp; Not OK! profile change unsuccessfully, please try again :)';
+            $response['message'] = '<span class="fa fa-info-circle"></span> &nbsp; Not OK! profile update unsuccessfully, please try again :)';
         }
 } else {
     $response = "Data not found";

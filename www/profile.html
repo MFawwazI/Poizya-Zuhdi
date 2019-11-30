@@ -1,182 +1,287 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Poizya | Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="css/plugins/fontawesome-free/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    <link rel="stylesheet" href="css/adminlte.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+      rel="stylesheet"
+    />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/profile.js"></script>
+    <script>
+      $(document).ready(function() {
+        if (sessionStorage.getItem("username") === null) {
+          alert("You must login first!");
+          window.location = "login.html";
+        }
+      });
+    </script>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Poizya | Profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/plugins/fontawesome-free/css/all.min.css" />
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-  <link rel="stylesheet" href="css/adminlte.min.css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
-  <script src="js/jquery-3.1.1.min.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
-  <script src="js/profile.js"></script>
-  <script>
-    $(document).ready(function () {
-      if (sessionStorage.getItem("username") === null) {
-        alert("You must login first!");
-        window.location = "login.html";
+    <style>
+      .nav-tabs > li > a,
+      li > div > a,
+      li > div > i,
+      .card-header > a {
+        color: #869099;
       }
-    });
-  </script>
 
-  <style>
-    .nav-tabs>li>a,
-    li>div>a,
-    li>div>i,
-    .card-header>a {
-      color: #869099;
-    }
+      .profile-username {
+        color: #ffffff;
+      }
 
-    .profile-username {
-      color: #ffffff;
-    }
+      .nav + .tab-custom-content {
+        border-bottom: 0;
+      }
 
-    .nav+.tab-custom-content {
-      border-bottom: 0;
-    }
+      .nav-tabs .nav-link {
+        border: 0;
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+      }
+    </style>
+  </head>
 
-    .nav-tabs .nav-link {
-      border: 0;
-      border-bottom-left-radius: 0.3rem;
-      border-bottom-right-radius: 0.3rem;
-    }
-  </style>
-</head>
-
-<body class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav" style="height: auto;">
-  <div class="wrapper">
-    <div class="header"></div>
-    <div style="padding: 4em 0 2em 0;">
-      <section class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div
-                style="background-image:url(img/boxed-bg.jpg); background-repeat: no-repeat; background-size: cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; padding: 1em;">
-                <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle" src="img/user1-128x128.jpg"
-                    alt="User profile picture" />
-                </div>
-                <h3 id="nameprofile" class="profile-username text-center"></h3>
-
-                <p id="bioprofile" class="text-muted text-center" style="color: #666666 !important;">
-                </p>
-              </div>
-              <ul class="nav nav-tabs" id="custom-content-above-tab" role="tablist">
-                <li class="nav-item" style="flex: 1; text-align: center;">
-                  <a class="nav-link active" id="custom-content-above-profile-tab" data-toggle="pill"
-                    href="#custom-content-above-profile" role="tab" aria-controls="custom-content-above-profile"
-                    aria-selected="true">My Profile</a>
-                </li>
-                <li class="nav-item" style="flex: 1; text-align: center;">
-                  <a class="nav-link" id="custom-content-above-order-tab" data-toggle="pill"
-                    href="#custom-content-above-order" role="tab" aria-controls="custom-content-above-order"
-                    aria-selected="false">My Order</a>
-                </li>
-              </ul>
-              <div class="tab-custom-content">
-                <div class="tab-content" id="custom-content-above-tabContent">
-                  <div class="tab-pane fade show active" id="custom-content-above-profile" role="tabpanel"
-                    aria-labelledby="custom-content-above-profile-tab">
-                    <div class="col-md-12">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Proin malesuada lacus ullamcorper dui molestie, sit amet
-                      congue quam finibus. Etiam ultricies nunc non magna
-                      feugiat commodo. Etiam odio magna, mollis auctor felis
-                      vitae, ullamcorper ornare ligula. Proin pellentesque
-                      tincidunt nisi, vitae ullamcorper felis aliquam id.
-                      Pellentesque habitant morbi tristique senectus et netus
-                      et malesuada fames ac turpis egestas. Proin id orci eu
-                      lectus blandit suscipit. Phasellus porta, ante et varius
-                      ornare, sem enim sollicitudin eros, at commodo leo est
-                      vitae lacus. Etiam ut porta sem. Proin porttitor porta
-                      nisl, id tempor risus rhoncus quis. In in quam a nibh
-                      cursus pulvinar non consequat neque. Mauris lacus elit,
-                      condimentum ac condimentum at, semper vitae lectus. Cras
-                      lacinia erat eget sapien porta consectetur.
-                    </div>
+  <body
+    class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav"
+    style="height: auto;"
+  >
+    <div class="wrapper">
+      <div class="header"></div>
+      <div style="padding: 4em 0 2em 0;">
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div
+                  style="background-image:url(img/boxed-bg.jpg); background-repeat: no-repeat; background-size: cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; padding: 1em;"
+                  data-toggle="modal"
+                  data-target="#photo-modal"
+                >
+                  <div class="text-center">
+                    <img
+                      class="profile-user-img img-fluid img-circle"
+                      src="img/user1-128x128.jpg"
+                      alt="User profile picture"
+                    />
                   </div>
-                  <!-- error -->
-                  <input type="hidden" id="id">
-                  <input type="hidden" id="name">
-                  <input type="hidden" id="username">
-                  <input type="hidden" id="bio">
-                  <input type="hidden" id="gender">
-                  <input type="hidden" id="birthday">
-                  <input type="hidden" id="phone_number">
-                  <input type="hidden" id="email">
-                  <input type="hidden" id="address">
-                  <input type="hidden" id="portal_code">
-                  <!-- error -->
-                  <div class="tab-pane fade" id="custom-content-above-order" role="tabpanel"
-                    aria-labelledby="custom-content-above-order-tab">
-                    <div class="col-md-12">
-                      <div class="card-header" style="padding: 0 !important">
-                        <h3 class="card-title" style="padding: 0.25em !important; font-weight: bold; flex: 1;">
-                          Order List
-                        </h3>
-                        <a href="profile/orderList/orderList.html"><span style="flex: 2; float: right;">View
-                            All</span></a>
+                  <h3
+                    id="nameprofile"
+                    class="profile-username text-center"
+                  ></h3>
+
+                  <p
+                    id="bioprofile"
+                    class="text-muted text-center"
+                    style="color: #666666 !important; width: 100%; overflow-wrap: break-word;"
+                  ></p>
+                </div>
+                <ul
+                  class="nav nav-tabs"
+                  id="custom-content-above-tab"
+                  role="tablist"
+                >
+                  <li class="nav-item" style="flex: 1; text-align: center;">
+                    <a
+                      class="nav-link active"
+                      id="custom-content-above-profile-tab"
+                      data-toggle="pill"
+                      href="#custom-content-above-profile"
+                      role="tab"
+                      aria-controls="custom-content-above-profile"
+                      aria-selected="true"
+                      >My Profile</a
+                    >
+                  </li>
+                  <li class="nav-item" style="flex: 1; text-align: center;">
+                    <a
+                      class="nav-link"
+                      id="custom-content-above-order-tab"
+                      data-toggle="pill"
+                      href="#custom-content-above-order"
+                      role="tab"
+                      aria-controls="custom-content-above-order"
+                      aria-selected="false"
+                      >My Order</a
+                    >
+                  </li>
+                </ul>
+                <div class="tab-custom-content">
+                  <div class="tab-content" id="custom-content-above-tabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="custom-content-above-profile"
+                      role="tabpanel"
+                      aria-labelledby="custom-content-above-profile-tab"
+                    >
+                      <div class="col-md-12">
+                        <div class="myProfile"></div>
                       </div>
                     </div>
-                    <ul class="products-list product-list-in-card pl-2 pr-2">
-                      <li class="item">
-                        <div onclick="location.href='profile/orderList/orderList.html#custom-content-above-topay-tab';">
-                          <a href="javascript:void(0)" class="product-title"><span style="flex: 2">To Pay</span>
-                            <i class="fa fa-chevron-right" style="float: right; flex: 1"></i></a>
+                    <!-- error -->
+                    <input type="hidden" id="id" />
+                    <input type="hidden" id="name" />
+                    <input type="hidden" id="username" />
+                    <input type="hidden" id="bio" />
+                    <input type="hidden" id="gender" />
+                    <input type="hidden" id="birthday" />
+                    <input type="hidden" id="phone_number" />
+                    <input type="hidden" id="email" />
+                    <input type="hidden" id="address" />
+                    <input type="hidden" id="portal_code" />
+                    <!-- error -->
+                    <div
+                      class="tab-pane fade"
+                      id="custom-content-above-order"
+                      role="tabpanel"
+                      aria-labelledby="custom-content-above-order-tab"
+                    >
+                      <div class="col-md-12">
+                        <div class="card-header" style="padding: 0 !important">
+                          <h3
+                            class="card-title"
+                            style="padding: 0.25em !important; font-weight: bold; flex: 1;"
+                          >
+                            Order List
+                          </h3>
+                          <a href="profile/orderList/orderList.html"
+                            ><span style="flex: 2; float: right;"
+                              >View All</span
+                            ></a
+                          >
                         </div>
-                      </li>
-                      <li class="item">
-                        <div onclick="location.href='profile/orderList/orderList.html';">
-                          <a href="javascript:void(0)" class="product-title">On Progress
-                            <i class="fa fa-chevron-right" style="float: right"></i></a>
-                        </div>
-                      </li>
-                      <li class="item">
-                        <div onclick="location.href='profile/orderList/orderList.html';">
-                          <a href="javascript:void(0)" class="product-title">
-                            Completed
-                            <i class="fa fa-chevron-right" style="float: right"></i>
-                          </a>
-                        </div>
-                      </li>
-                      <li class="item">
-                        <div onclick="location.href='profile/orderList/orderList.html';">
-                          <a href="javascript:void(0)" class="product-title">Canceled
-                            <i class="fa fa-chevron-right" style="float: right"></i></a>
-                        </div>
-                      </li>
-                    </ul>
+                      </div>
+                      <ul class="products-list product-list-in-card pl-2 pr-2">
+                        <li class="item">
+                          <div
+                            onclick="location.href='profile/orderList/orderList.html#custom-content-above-topay-tab';"
+                          >
+                            <a href="javascript:void(0)" class="product-title"
+                              ><span style="flex: 2">To Pay</span>
+                              <i
+                                class="fa fa-chevron-right"
+                                style="float: right; flex: 1"
+                              ></i
+                            ></a>
+                          </div>
+                        </li>
+                        <li class="item">
+                          <div
+                            onclick="location.href='profile/orderList/orderList.html';"
+                          >
+                            <a href="javascript:void(0)" class="product-title"
+                              >On Progress
+                              <i
+                                class="fa fa-chevron-right"
+                                style="float: right"
+                              ></i
+                            ></a>
+                          </div>
+                        </li>
+                        <li class="item">
+                          <div
+                            onclick="location.href='profile/orderList/orderList.html';"
+                          >
+                            <a href="javascript:void(0)" class="product-title">
+                              Completed
+                              <i
+                                class="fa fa-chevron-right"
+                                style="float: right"
+                              ></i>
+                            </a>
+                          </div>
+                        </li>
+                        <li class="item">
+                          <div
+                            onclick="location.href='profile/orderList/orderList.html';"
+                          >
+                            <a href="javascript:void(0)" class="product-title"
+                              >Canceled
+                              <i
+                                class="fa fa-chevron-right"
+                                style="float: right"
+                              ></i
+                            ></a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </section>
+      </div>
+      <!-- Photo Modal -->
+      <div class="modal fade" id="photo-modal">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-body picture-menu">
+              <!-- Change Profile Picture -->
+              <div class="input-group">
+                <div class="custom-file">
+                  <label for="profile-picture">Change Profile Picture</label>
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    id="profile-picture"
+                  />
+                </div>
+              </div>
+              <div><span>Remove Profile Picture</span></div>
+              <!-- Change Background Picture -->
+              <div class="input-group">
+                <div class="custom-file">
+                  <label for="background-picture"
+                    >Change Background Picture</label
+                  >
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    id="background-picture"
+                  />
+                </div>
+              </div>
+              <div><span>Remove Background Picture</span></div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+      <!-- End Photo Modal -->
+      <div class="footer"></div>
     </div>
-    <div class="footer"></div>
-  </div>
 
-  <script>
-    $(".header").load("nav/headerProfile.html");
-  </script>
-  <script>
-    $(".footer").load("nav/footer.html");
-  </script>
+    <script>
+      $(".header").load("nav/headerProfile.html");
+    </script>
+    <script>
+      $(".footer").load("nav/footer.html");
+    </script>
+    <script>
+      $(".myProfile").load("profile/myProfile/myProfile.html");
+    </script>
 
-  <!-- jQuery -->
-  <script src="css/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="js/template/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="js/template/demo.js"></script>
-</body>
-
+    <!-- jQuery -->
+    <script src="css/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="js/template/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="js/template/demo.js"></script>
+  </body>
 </html>
