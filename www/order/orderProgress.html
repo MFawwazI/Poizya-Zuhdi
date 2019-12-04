@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Poizya Zuhdi | Invoice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="../css/plugins/fontawesome-free/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    <link rel="stylesheet" href="../css/adminlte.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+      rel="stylesheet"
+    />
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <style>
+      body {
+        font-size: 14px;
+      }
+
+      .card-header {
+        padding: 0;
+        border-radius: 0.5rem !important;
+      }
+
+      .card {
+        border-radius: 0.5rem;
+        width: 45vw;
+        margin: 0.5em;
+      }
+
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+      }
+
+      .favorite {
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .favorite > i {
+        /* -webkit-text-stroke-color: black; */
+        color: #869099;
+        opacity: 0.85;
+        /* -webkit-text-stroke-width: 1px; */
+      }
+
+      .btn-app {
+        background-color: white;
+        border: 0;
+        margin: 0.5em;
+        padding: 0.5em;
+        height: auto;
+        min-width: auto;
+      }
+
+      .col-3,
+      .col-2,
+      .col-4 {
+        font-size: 12px;
+        align-self: center;
+      }
+
+      .items > .row {
+        padding: 0.5em;
+      }
+
+      .items > .row:nth-child(odd) {
+        background-color: rgb(242, 242, 242);
+      }
+
+      .header-item,
+      .footer-item {
+        padding: 0.5em;
+      }
+
+      .header-item > div:not(:first-child) {
+        text-align: center;
+      }
+
+      .items > .row > .col-3 {
+        text-align: right;
+      }
+
+      .items > .row > .col-2 {
+        text-align: center;
+      }
+
+      .footer-item > div:last-child {
+        text-align: right;
+      }
+
+      .footer-item > .col-2 {
+        text-align: center;
+      }
+
+      .box > img {
+        width: 50%;
+        height: auto;
+      }
+
+      th {
+        width: 70px;
+      }
+    </style>
+
+    <script>
+      // Payment Dropdown
+      $(document).ready(function() {
+        $("select")
+          .change(function() {
+            $(this)
+              .find("option:selected")
+              .each(function() {
+                var optionValue = $(this).attr("value");
+                if (optionValue) {
+                  $(".box")
+                    .not("." + optionValue)
+                    .hide();
+                  $("." + optionValue).show();
+                  window.scrollTo(0, document.body.scrollHeight);
+                } else {
+                  $(".box").hide();
+                }
+              });
+          })
+          .change();
+      });
+    </script>
+  </head>
+
+  <body
+    class="layout-footer-fixed hold-transition layout-fixed layout-navbar-fixed layout-top-nav"
+    style="height: auto; "
+  >
+    <div class="wrapper">
+      <div class="header"></div>
+      <div
+        style="background-color: #e5e5e5; padding: 1.9em;text-align:center;"
+      ></div>
+      <div class="col-md-12" style="padding-bottom : 3em; padding-top: 1em">
+        <!-- Invoice Info -->
+        <div class="row">
+          <div class="col-8">
+            <h4>Invoice</h4>
+            <table style="font-size: 14px;">
+              <tr>
+                <th>Seller</th>
+                <td>Alfan Zuhdi</td>
+              </tr>
+              <tr>
+                <th>Order ID</th>
+                <td>Invoice #00001</td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td>30 November 2019</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-4">
+            <img src="../img/logo.png" alt="logo" style="width: 100%;" />
+          </div>
+        </div>
+        <!-- Order Detail -->
+        <div
+          class="col-md-12"
+          style="border-top:1px solid #869099; border-bottom: 1px solid #869099;"
+        >
+          <div class="row header-item">
+            <div class="col-4">
+              <strong>Product Name</strong>
+            </div>
+            <div class="col-2"><strong>Quantity</strong></div>
+            <div class="col-3"><strong>Price</strong></div>
+            <div class="col-3"><strong>Subtotal</strong></div>
+          </div>
+          <div class="items">
+            <div class="row">
+              <div class="col-4">
+                Tas Pria - Tas Selempang Pria - Sling Bag Pria (GALAXY)
+              </div>
+              <div class="col-2">1</div>
+              <div class="col-3">Rp 250.000</div>
+              <div class="col-3">Rp 250.000</div>
+            </div>
+            <div class="row">
+              <div class="col-4">Norman Albert</div>
+              <div class="col-2">5</div>
+              <div class="col-3">Rp 300.000</div>
+              <div class="col-3">Rp 1.500.000</div>
+            </div>
+            <div class="row">
+              <div class="col-4">Eiger Adventure</div>
+              <div class="col-2">2</div>
+              <div class="col-3">Rp 400.000</div>
+              <div class="col-3">Rp 800.000</div>
+            </div>
+          </div>
+          <div class="row footer-item">
+            <div class="col-4"></div>
+            <div class="col-2"><strong>Total</strong></div>
+            <div class="col-6"><strong>Rp 2.550.000</strong></div>
+          </div>
+        </div>
+
+        <!-- User Address -->
+        <div style="margin-top: 0.75em;">
+          <h6><strong>Shipping Destination</strong></h6>
+          <div>Muhammad Fawwaz Izzuddin</div>
+          <div>
+            Jln. Cijawura Girang V No.90 Belakang Margasari Buahbatu Bandung
+          </div>
+          <div>08139550xxxx</div>
+        </div>
+
+        <!-- Payment Method -->
+        <div style="margin-top: 1em; margin-bottom: 0.5em;">
+          <div class="form-group">
+            <select class="form-control">
+              <option>Choose Payment Method</option>
+              <option value="mandiri">Mandiri</option>
+              <option value="bca">BCA</option>
+              <option value="bni">BNI</option>
+              <option value="bri">BRI</option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="bank-item col-md-12"
+          style="margin-top: 1em; margin-bottom: 1em;"
+        >
+          <div class="mandiri box">
+            <img
+              src="https://logos-download.com/wp-content/uploads/2016/06/Mandiri_logo-700x220.png"
+              alt="mandiri-logo"
+            />
+            <div style="margin-top: 0.5em;">
+              <strong>Bank Mandiri</strong>
+            </div>
+            <div>102 000 5263873</div>
+            <div>a/n Poizya</div>
+          </div>
+          <div class="bca box">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/id/thumb/e/e0/BCA_logo.svg/472px-BCA_logo.svg.png"
+              alt="bca-logo"
+            />
+            <div style="margin-top: 0.5em;">
+              <strong>Bank BCA</strong>
+            </div>
+            <div>102 000 5263873</div>
+            <div>a/n Poizya</div>
+          </div>
+          <div class="bni box">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1280px-BNI_logo.svg.png"
+              alt="bni-logo"
+            />
+            <div style="margin-top: 0.5em;">
+              <strong>Bank BNI</strong>
+            </div>
+            <div>102 000 5263873</div>
+            <div>a/n Poizya</div>
+          </div>
+          <div class="bri box">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_BRI.png"
+              alt="bri-logo"
+            />
+            <div style="margin-top: 0.5em;">
+              <strong>Bank BRI</strong>
+            </div>
+            <div>102 000 5263873</div>
+            <div>a/n Poizya</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer"></div>
+    </div>
+
+    <script>
+      $(".header").load("orderHeader.html");
+      $(".footer").load("orderFooter.html");
+    </script>
+
+    <script src="../css/plugins/jquery/jquery.min.js"></script>
+    <script src="../css/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/template/adminlte.min.js"></script>
+    <script src="../js/template/demo.js"></script>
+  </body>
+</html>
