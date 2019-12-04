@@ -1,18 +1,13 @@
-<div
-  class="callout callout-info"
-  onclick="location.href='../../order/order.html'"
->
-  <h5>To Pay</h5>
+<div>
+  <div class="toPay"></div>
+  <div class="onProgress"></div>
+  <div class="complete"></div>
+  <div class="cancel"></div>
 </div>
 
-<div class="callout callout-warning">
-  <h5>On Progress</h5>
-</div>
-
-<div class="callout callout-success">
-  <h5>Completed</h5>
-</div>
-
-<div class="callout callout-danger">
-  <h5>Canceled</h5>
-</div>
+<script>
+  $(".toPay").load("toPay.html");
+  $(".onProgress").load("onProgress.html");
+  $(".complete").load("completed.html");
+  $(".cancel").load("canceled.html");
+</script>
